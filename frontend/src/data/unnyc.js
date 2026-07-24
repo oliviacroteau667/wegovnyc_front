@@ -333,13 +333,13 @@ export const mapMarkers = [
     { lat: 40.7087, lng: -74.0090, label: 'NYS Attorney General', type: 'nys', desc: '28 Liberty Street' }
 ];
 
-// NOTE: this array is the ACTIVE source of campaign news. It used to be a
-// fallback behind a Strapi `news-item` collection, but Strapi was retired
-// (2026-07-24) and the Payload CMS has no news-items collection, so
-// `fetchAPI('/news-items')` returns empty and the page falls back to here.
-// Edit this list to change campaign news. (The same applies to `events` above —
-// those 4 items also exist in Payload's `events` collection, but the front-end
-// client doesn't read them yet; wire `/events` in src/lib/api.js to switch over.)
+// NOTE: campaign news is now managed in the CMS — Payload's `news-items`
+// collection, brand-scoped to `wegovnyc` (as are the `events` above). The page
+// fetches them via src/lib/api.js and only falls back to these arrays if the CMS
+// returns nothing, so they are a safety net, not the edit surface.
+// To change news/events: edit them in the Sarapis Payload admin.
+// These arrays were seeded into the CMS verbatim (2026-07-24), so they still
+// mirror what is published — keep them roughly in sync if you rely on the fallback.
 export const news = [
     {
         source: 'NYC Mayor\'s Office',

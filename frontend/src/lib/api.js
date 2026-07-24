@@ -17,10 +17,13 @@
  *   NEXT_PUBLIC_PAYLOAD_URL   Payload origin (default https://next.sarapis.org)
  *   NEXT_PUBLIC_SITE_KEY      brand key in the Sites collection (default 'wegovnyc')
  *
+ * Served from Payload: `/articles` (posts), `/events`, `/news-items`, `/global`
+ * (the brand's Site doc → navbar/footer/SEO).
+ *
  * Scope notes:
  *   - `/pages` returns an empty result by design: the marketing pages (home,
  *     /about) are frozen in `src/content/frozen-pages.js` and rendered by
- *     SectionRenderer, so they need no CMS call. Blog/articles/global are live.
+ *     SectionRenderer, so they need no CMS call.
  *   - Campaign form POSTs go through `createSubmission()` below, called from
  *     components/unnyc/{UnnycCampaignSignup,CampaignSignForm}.js.
  */
@@ -49,11 +52,16 @@ export async function fetchAPI(path, options = {}) {
       return getArticles(sp, { cache, isDraftMode });
     case 'global':
       return getGlobal({ cache });
+    case 'events':
+      return getEvents(sp, { cache });
+    case 'news-items':
+      return getNewsItems(sp, { cache });
     case 'pages':
-      // Dynamic-zone page bodies are not migrated to Payload (see NOTES).
+      // Marketing page bodies are frozen in src/content/frozen-pages.js, so
+      // there is nothing to fetch (see the header notes).
       return { data: [], meta: {} };
     default:
-      // Unknown endpoint — behave like an empty Strapi list so callers degrade.
+      // Unknown endpoint — behave like an empty list so callers degrade.
       return { data: [], meta: {} };
   }
 }
@@ -180,6 +188,48 @@ function mediaObj(m) {
   return { url: m.url, alt: m.alt, width: m.width, height: m.height };
 }
 
+/**
+ * Events for this brand, soonest-first. Payload's `events` field names already
+ * match what the consumer maps (dateLabel/startDate/endDate/location/link), so
+ * the docs pass through with just the brand filter applied.
+ */
+async function getEvents(sp, { cache }) {
+  const params = {
+    'where[sites.key][equals]': SITE_KEY,
+    sort: 'startDate',
+    depth: '0',
+    limit: sp.get('pagination[pageSize]') || sp.get('pagination[limit]') || '100',
+  };
+  const r = await payloadGET('events', params, cache);
+  return { data: r.docs || [], meta: listMeta(r, params.limit) };
+}
+
+/**
+ * News cards for this brand, newest-first by `sortDate` (the machine-readable
+ * date; `dateLabel` is the fuzzy display string, so it can't be sorted on).
+ */
+async function getNewsItems(sp, { cache }) {
+  const params = {
+    'where[sites.key][equals]': SITE_KEY,
+    sort: '-sortDate',
+    depth: '0',
+    limit: sp.get('pagination[pageSize]') || sp.get('pagination[limit]') || '100',
+  };
+  const r = await payloadGET('news-items', params, cache);
+  return { data: r.docs || [], meta: listMeta(r, params.limit) };
+}
+
+function listMeta(r, limit) {
+  return {
+    pagination: {
+      page: r.page || 1,
+      pageSize: r.limit || Number(limit),
+      pageCount: r.totalPages || 1,
+      total: r.totalDocs ?? (r.docs?.length || 0),
+    },
+  };
+}
+
 async function getGlobal({ cache }) {
   const r = await payloadGET('sites', {
     'where[key][equals]': SITE_KEY,
@@ -297,9 +347,12 @@ function lexicalToHTML(content) {
 /*
  * How the content is wired (as shipped)
  * -------------------------------------
- * - Editing: content lives in the Sarapis Payload admin. A post appears on this
- *   site when its "Brands" field includes `wegovnyc`; the same post can also be
- *   published to other brands (e.g. `databook`) from the one entry.
+ * - Editing: content lives in the Sarapis Payload admin. A post/event/news item
+ *   appears on this site when its "Brands" field includes `wegovnyc`; the same
+ *   entry can also be published to other brands (e.g. `databook`) at once.
+ * - /unnyc events + news come from the `events` / `news-items` collections. The
+ *   page keeps the static arrays in src/data/unnyc.js as a fallback for when the
+ *   CMS returns nothing, so a CMS outage degrades instead of emptying the page.
  * - Marketing pages: home and /about are frozen in src/content/frozen-pages.js
  *   (snapshotted section data rendered by SectionRenderer). Edit that file to
  *   change them — they intentionally make no CMS call. The `sections.articles`
