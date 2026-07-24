@@ -1,48 +1,31 @@
-import { fetchAPI } from '@/lib/api';
 import SectionRenderer from '@/components/sections/SectionRenderer';
-import { draftMode } from 'next/headers';
+import { FROZEN_PAGES } from '@/content/frozen-pages';
 import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0; // Always fetch fresh data
+export const revalidate = 0;
 
-async function getPageBySlug(slug) {
-    const { isEnabled } = await draftMode();
-    const query = `/pages?filters[slug][$eq]=${slug}&populate[content][on][sections.hero][populate]=*&populate[content][on][sections.rich-text][populate]=*&populate[content][on][sections.embed][populate]=*`;
-
-    try {
-        const response = await fetchAPI(query, { isDraftMode: isEnabled });
-        return response.data[0];
-    } catch (error) {
-        console.error(`Error fetching page with slug ${slug}:`, error);
-        return null;
-    }
+// Marketing pages (e.g. /about) are now frozen in src/content/frozen-pages.js
+// rather than fetched from Strapi (hybrid CMS move). Unknown slugs 404.
+function getFrozen(slug) {
+  return FROZEN_PAGES[slug] || null;
 }
 
 export async function generateMetadata({ params }) {
-    const { slug } = await params;
-    const page = await getPageBySlug(slug);
-
-    if (!page) {
-        return {};
-    }
-
-    return {
-        title: page.title + ' | WeGovNYC',
-    };
+  const { slug } = await params;
+  const page = getFrozen(slug);
+  if (!page) return {};
+  return { title: (page.title || slug) + ' | WeGovNYC' };
 }
 
 export default async function Page({ params }) {
-    const { slug } = await params;
-    const page = await getPageBySlug(slug);
+  const { slug } = await params;
+  const page = getFrozen(slug);
+  if (!page) notFound();
 
-    if (!page) {
-        notFound();
-    }
-
-    return (
-        <div>
-            <SectionRenderer sections={page.content} />
-        </div>
-    );
+  return (
+    <div>
+      <SectionRenderer sections={page.content} />
+    </div>
+  );
 }

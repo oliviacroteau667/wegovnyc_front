@@ -41,6 +41,17 @@ const nextConfig = {
         pathname: '/uploads/**',
       },
       {
+        // Payload (Sarapis multi-brand CMS) — hero/media for blog + articles
+        protocol: 'https',
+        hostname: 'next.sarapis.org',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sarapis.org',
+        pathname: '/**',
+      },
+      {
         protocol: 'https',
         hostname: '*.basemaps.cartocdn.com',
         pathname: '/**',

@@ -1,7 +1,6 @@
 "use client";
 import { useState } from 'react';
-
-const STRAPI_URL = (process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337').replace(/\/$/, '');
+import { createSubmission } from '@/lib/api';
 
 const EMPTY = { name: '', email: '', title: '', organization: '', contactName: '', website: '' };
 
@@ -9,10 +8,9 @@ const EMPTY = { name: '', email: '', title: '', organization: '', contactName: '
  * CampaignSignForm — signature/endorsement form for the campaign page.
  *
  * Two modes: sign as an individual, or endorse on behalf of an organization.
- * Posts to the Strapi `campaign-endorsement` collection (public create-only;
- * entries arrive as drafts and appear on the endorser wall once published).
- * Optionally also subscribes the email to campaign updates via
- * `campaign-signup`.
+ * Posts to Payload's `campaign-endorsements` collection (public create-only;
+ * entries appear on the endorser wall once published/reviewed). Optionally also
+ * subscribes the email to campaign updates via `campaign-signups`.
  */
 export default function CampaignSignForm({ campaign = 'un-open-source' }) {
     const [kind, setKind] = useState('individual');
@@ -50,45 +48,27 @@ export default function CampaignSignForm({ campaign = 'un-open-source' }) {
         setMessage('');
 
         try {
-            const res = await fetch(`${STRAPI_URL}/api/campaign-endorsements`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    data: {
-                        kind,
-                        name,
-                        email,
-                        campaign,
-                        title: fields.title.trim() || undefined,
-                        organization: fields.organization.trim() || undefined,
-                        contactName: fields.contactName.trim() || undefined,
-                        website: fields.website.trim() || undefined,
-                    },
-                }),
+            await createSubmission('campaign-endorsements', {
+                kind,
+                name,
+                email,
+                campaign,
+                title: fields.title.trim() || undefined,
+                organization: fields.organization.trim() || undefined,
+                contactName: fields.contactName.trim() || undefined,
+                website: fields.website.trim() || undefined,
             });
-            if (!res.ok) throw new Error(`Sign failed (${res.status})`);
-            const json = await res.json();
 
             // Best-effort updates subscription — never blocks the signature.
             if (wantsUpdates) {
-                fetch(`${STRAPI_URL}/api/campaign-signups`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        data: { email, campaign, source: '/unnyc/campaign' },
-                    }),
-                }).catch(() => { });
+                createSubmission('campaign-signups', { email, campaign, source: '/unnyc/campaign' }).catch(() => { });
             }
 
             setStatus('success');
             setMessage(
-                json?.meta?.alreadySigned
-                    ? (kind === 'individual'
-                        ? 'You had already signed — thank you again for your support.'
-                        : 'This organization has already endorsed — thank you again for the support.')
-                    : (kind === 'individual'
-                        ? 'Thank you for signing. Your name will appear below once reviewed.'
-                        : 'Thank you. Your organization’s endorsement will appear below once reviewed.')
+                kind === 'individual'
+                    ? 'Thank you for signing. Your name will appear below once reviewed.'
+                    : 'Thank you. Your organization’s endorsement will appear below once reviewed.'
             );
             setFields(EMPTY);
         } catch (err) {
