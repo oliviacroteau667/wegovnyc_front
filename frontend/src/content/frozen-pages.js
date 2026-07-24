@@ -35,7 +35,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "large": {
                   "ext": ".jpg",
-                  "url": "/uploads/large_agencies_00e067a8ff.jpg",
+                  "url": "/frozen-media/large_agencies_00e067a8ff.jpg",
                   "hash": "large_agencies_00e067a8ff",
                   "mime": "image/jpeg",
                   "name": "large_agencies.jpg",
@@ -47,7 +47,7 @@ export const FROZEN_PAGES = {
                 },
                 "small": {
                   "ext": ".jpg",
-                  "url": "/uploads/small_agencies_00e067a8ff.jpg",
+                  "url": "/frozen-media/small_agencies_00e067a8ff.jpg",
                   "hash": "small_agencies_00e067a8ff",
                   "mime": "image/jpeg",
                   "name": "small_agencies.jpg",
@@ -59,7 +59,7 @@ export const FROZEN_PAGES = {
                 },
                 "medium": {
                   "ext": ".jpg",
-                  "url": "/uploads/medium_agencies_00e067a8ff.jpg",
+                  "url": "/frozen-media/medium_agencies_00e067a8ff.jpg",
                   "hash": "medium_agencies_00e067a8ff",
                   "mime": "image/jpeg",
                   "name": "medium_agencies.jpg",
@@ -71,7 +71,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".jpg",
-                  "url": "/uploads/thumbnail_agencies_00e067a8ff.jpg",
+                  "url": "/frozen-media/thumbnail_agencies_00e067a8ff.jpg",
                   "hash": "thumbnail_agencies_00e067a8ff",
                   "mime": "image/jpeg",
                   "name": "thumbnail_agencies.jpg",
@@ -86,7 +86,7 @@ export const FROZEN_PAGES = {
               "ext": ".jpg",
               "mime": "image/jpeg",
               "size": 159.44,
-              "url": "/uploads/agencies_00e067a8ff.jpg",
+              "url": "/frozen-media/agencies_00e067a8ff.jpg",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -117,7 +117,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".webp",
-                  "url": "/uploads/small_people_818cd20fd6.webp",
+                  "url": "/frozen-media/small_people_818cd20fd6.webp",
                   "hash": "small_people_818cd20fd6",
                   "mime": "image/webp",
                   "name": "small_people.webp",
@@ -129,7 +129,7 @@ export const FROZEN_PAGES = {
                 },
                 "medium": {
                   "ext": ".webp",
-                  "url": "/uploads/medium_people_818cd20fd6.webp",
+                  "url": "/frozen-media/medium_people_818cd20fd6.webp",
                   "hash": "medium_people_818cd20fd6",
                   "mime": "image/webp",
                   "name": "medium_people.webp",
@@ -141,7 +141,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".webp",
-                  "url": "/uploads/thumbnail_people_818cd20fd6.webp",
+                  "url": "/frozen-media/thumbnail_people_818cd20fd6.webp",
                   "hash": "thumbnail_people_818cd20fd6",
                   "mime": "image/webp",
                   "name": "thumbnail_people.webp",
@@ -156,7 +156,7 @@ export const FROZEN_PAGES = {
               "ext": ".webp",
               "mime": "image/webp",
               "size": 64.47,
-              "url": "/uploads/people_818cd20fd6.webp",
+              "url": "/frozen-media/people_818cd20fd6.webp",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -187,7 +187,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".jpeg",
-                  "url": "/uploads/small_notices_8ec957c4ca.jpeg",
+                  "url": "/frozen-media/small_notices_8ec957c4ca.jpeg",
                   "hash": "small_notices_8ec957c4ca",
                   "mime": "image/jpeg",
                   "name": "small_notices.jpeg",
@@ -199,7 +199,7 @@ export const FROZEN_PAGES = {
                 },
                 "medium": {
                   "ext": ".jpeg",
-                  "url": "/uploads/medium_notices_8ec957c4ca.jpeg",
+                  "url": "/frozen-media/medium_notices_8ec957c4ca.jpeg",
                   "hash": "medium_notices_8ec957c4ca",
                   "mime": "image/jpeg",
                   "name": "medium_notices.jpeg",
@@ -211,7 +211,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".jpeg",
-                  "url": "/uploads/thumbnail_notices_8ec957c4ca.jpeg",
+                  "url": "/frozen-media/thumbnail_notices_8ec957c4ca.jpeg",
                   "hash": "thumbnail_notices_8ec957c4ca",
                   "mime": "image/jpeg",
                   "name": "thumbnail_notices.jpeg",
@@ -226,7 +226,7 @@ export const FROZEN_PAGES = {
               "ext": ".jpeg",
               "mime": "image/jpeg",
               "size": 76.43,
-              "url": "/uploads/notices_8ec957c4ca.jpeg",
+              "url": "/frozen-media/notices_8ec957c4ca.jpeg",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -257,7 +257,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".jpg",
-                  "url": "/uploads/small_schools_23dc5c78be.jpg",
+                  "url": "/frozen-media/small_schools_23dc5c78be.jpg",
                   "hash": "small_schools_23dc5c78be",
                   "mime": "image/jpeg",
                   "name": "small_schools.jpg",
@@ -269,7 +269,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".jpg",
-                  "url": "/uploads/thumbnail_schools_23dc5c78be.jpg",
+                  "url": "/frozen-media/thumbnail_schools_23dc5c78be.jpg",
                   "hash": "thumbnail_schools_23dc5c78be",
                   "mime": "image/jpeg",
                   "name": "thumbnail_schools.jpg",
@@ -284,7 +284,7 @@ export const FROZEN_PAGES = {
               "ext": ".jpg",
               "mime": "image/jpeg",
               "size": 68.44,
-              "url": "/uploads/schools_23dc5c78be.jpg",
+              "url": "/frozen-media/schools_23dc5c78be.jpg",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -315,7 +315,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".jpeg",
-                  "url": "/uploads/small_projects_738e9e9f46.jpeg",
+                  "url": "/frozen-media/small_projects_738e9e9f46.jpeg",
                   "hash": "small_projects_738e9e9f46",
                   "mime": "image/jpeg",
                   "name": "small_projects.jpeg",
@@ -327,7 +327,7 @@ export const FROZEN_PAGES = {
                 },
                 "medium": {
                   "ext": ".jpeg",
-                  "url": "/uploads/medium_projects_738e9e9f46.jpeg",
+                  "url": "/frozen-media/medium_projects_738e9e9f46.jpeg",
                   "hash": "medium_projects_738e9e9f46",
                   "mime": "image/jpeg",
                   "name": "medium_projects.jpeg",
@@ -339,7 +339,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".jpeg",
-                  "url": "/uploads/thumbnail_projects_738e9e9f46.jpeg",
+                  "url": "/frozen-media/thumbnail_projects_738e9e9f46.jpeg",
                   "hash": "thumbnail_projects_738e9e9f46",
                   "mime": "image/jpeg",
                   "name": "thumbnail_projects.jpeg",
@@ -354,7 +354,7 @@ export const FROZEN_PAGES = {
               "ext": ".jpeg",
               "mime": "image/jpeg",
               "size": 81.25,
-              "url": "/uploads/projects_738e9e9f46.jpeg",
+              "url": "/frozen-media/projects_738e9e9f46.jpeg",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -385,7 +385,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".png",
-                  "url": "/uploads/small_districts_596fc36c7f.png",
+                  "url": "/frozen-media/small_districts_596fc36c7f.png",
                   "hash": "small_districts_596fc36c7f",
                   "mime": "image/png",
                   "name": "small_districts.png",
@@ -397,7 +397,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".png",
-                  "url": "/uploads/thumbnail_districts_596fc36c7f.png",
+                  "url": "/frozen-media/thumbnail_districts_596fc36c7f.png",
                   "hash": "thumbnail_districts_596fc36c7f",
                   "mime": "image/png",
                   "name": "thumbnail_districts.png",
@@ -412,7 +412,7 @@ export const FROZEN_PAGES = {
               "ext": ".png",
               "mime": "image/png",
               "size": 79.07,
-              "url": "/uploads/districts_596fc36c7f.png",
+              "url": "/frozen-media/districts_596fc36c7f.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -450,7 +450,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".webp",
-                  "url": "/uploads/small_Untitled_drawing_1_png_93daf27463.webp",
+                  "url": "/frozen-media/small_Untitled_drawing_1_png_93daf27463.webp",
                   "hash": "small_Untitled_drawing_1_png_93daf27463",
                   "mime": "image/webp",
                   "name": "small_Untitled-drawing-1.png.webp",
@@ -462,7 +462,7 @@ export const FROZEN_PAGES = {
                 },
                 "medium": {
                   "ext": ".webp",
-                  "url": "/uploads/medium_Untitled_drawing_1_png_93daf27463.webp",
+                  "url": "/frozen-media/medium_Untitled_drawing_1_png_93daf27463.webp",
                   "hash": "medium_Untitled_drawing_1_png_93daf27463",
                   "mime": "image/webp",
                   "name": "medium_Untitled-drawing-1.png.webp",
@@ -474,7 +474,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".webp",
-                  "url": "/uploads/thumbnail_Untitled_drawing_1_png_93daf27463.webp",
+                  "url": "/frozen-media/thumbnail_Untitled_drawing_1_png_93daf27463.webp",
                   "hash": "thumbnail_Untitled_drawing_1_png_93daf27463",
                   "mime": "image/webp",
                   "name": "thumbnail_Untitled-drawing-1.png.webp",
@@ -489,7 +489,7 @@ export const FROZEN_PAGES = {
               "ext": ".webp",
               "mime": "image/webp",
               "size": 4.61,
-              "url": "/uploads/Untitled_drawing_1_png_93daf27463.webp",
+              "url": "/frozen-media/Untitled_drawing_1_png_93daf27463.webp",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
@@ -513,7 +513,7 @@ export const FROZEN_PAGES = {
               "formats": {
                 "small": {
                   "ext": ".webp",
-                  "url": "/uploads/small_Untitled_drawing_2_png_ce21af0a7f.webp",
+                  "url": "/frozen-media/small_Untitled_drawing_2_png_ce21af0a7f.webp",
                   "hash": "small_Untitled_drawing_2_png_ce21af0a7f",
                   "mime": "image/webp",
                   "name": "small_Untitled-drawing-2.png.webp",
@@ -525,7 +525,7 @@ export const FROZEN_PAGES = {
                 },
                 "thumbnail": {
                   "ext": ".webp",
-                  "url": "/uploads/thumbnail_Untitled_drawing_2_png_ce21af0a7f.webp",
+                  "url": "/frozen-media/thumbnail_Untitled_drawing_2_png_ce21af0a7f.webp",
                   "hash": "thumbnail_Untitled_drawing_2_png_ce21af0a7f",
                   "mime": "image/webp",
                   "name": "thumbnail_Untitled-drawing-2.png.webp",
@@ -540,7 +540,7 @@ export const FROZEN_PAGES = {
               "ext": ".webp",
               "mime": "image/webp",
               "size": 6.59,
-              "url": "/uploads/Untitled_drawing_2_png_ce21af0a7f.webp",
+              "url": "/frozen-media/Untitled_drawing_2_png_ce21af0a7f.webp",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,

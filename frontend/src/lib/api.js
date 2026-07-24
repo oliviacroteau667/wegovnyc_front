@@ -27,7 +27,6 @@
 
 const PAYLOAD_URL = (
   process.env.NEXT_PUBLIC_PAYLOAD_URL ||
-  process.env.NEXT_PUBLIC_STRAPI_URL ||
   'https://next.sarapis.org'
 ).replace(/\/$/, '');
 
@@ -63,6 +62,9 @@ export async function fetchAPI(path, options = {}) {
 export function getStrapiMedia(url) {
   if (url == null) return null;
   if (url.startsWith('http') || url.startsWith('//')) return url;
+  // Frozen marketing media lives in the front-end's own /public (migrated off
+  // Strapi) — serve as-is, don't prefix the Payload host.
+  if (url.startsWith('/frozen-media/')) return url;
   return `${PAYLOAD_URL}${url}`;
 }
 
