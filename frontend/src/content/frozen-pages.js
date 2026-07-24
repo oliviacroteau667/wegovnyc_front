@@ -1,8 +1,13 @@
-// Frozen marketing-page content — snapshotted from Strapi 2026-07-24
-// (hybrid CMS move: blog/articles/events/global come from Payload; home/about are
-// frozen here as data rendered by SectionRenderer, so they no longer depend on Strapi
-// at request time). To edit: change this file. NOTE: image URLs still point at
-// strapi.wegov.nyc media — keep that media serving, or rehost, before deleting Strapi.
+// Frozen marketing-page content for home + /about — originally snapshotted from
+// Strapi on 2026-07-24, now self-contained (Strapi was retired the same day).
+//
+// Hybrid CMS split: blog/articles/global come from the Sarapis Payload CMS via
+// src/lib/api.js, while these two marketing pages are plain data rendered by
+// SectionRenderer — so they make no CMS call at request time.
+//
+// To edit these pages: change this file (it is the source of truth for them).
+// Their images live in /public/frozen-media (migrated off Strapi), so paths here
+// are local `/frozen-media/*` and resolve same-origin.
 export const FROZEN_PAGES = {
   "home": {
     "title": "Home",

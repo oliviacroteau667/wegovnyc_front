@@ -333,10 +333,13 @@ export const mapMarkers = [
     { lat: 40.7087, lng: -74.0090, label: 'NYS Attorney General', type: 'nys', desc: '28 Liberty Street' }
 ];
 
-// NOTE: The three UN Open Source campaign news items now live in Strapi
-// (content type `news-item`), not here — see scripts/seed-unnyc-campaign-news.js
-// in the backend. This static array is only a build-time fallback for when the
-// CMS is unreachable; campaign news is curated in the CMS.
+// NOTE: this array is the ACTIVE source of campaign news. It used to be a
+// fallback behind a Strapi `news-item` collection, but Strapi was retired
+// (2026-07-24) and the Payload CMS has no news-items collection, so
+// `fetchAPI('/news-items')` returns empty and the page falls back to here.
+// Edit this list to change campaign news. (The same applies to `events` above —
+// those 4 items also exist in Payload's `events` collection, but the front-end
+// client doesn't read them yet; wire `/events` in src/lib/api.js to switch over.)
 export const news = [
     {
         source: 'NYC Mayor\'s Office',

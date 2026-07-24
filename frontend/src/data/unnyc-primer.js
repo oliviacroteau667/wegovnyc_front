@@ -8,7 +8,7 @@
  * endorsing organizations, 25 Mar 2025), unopensource.org/agenda (OSW 2026
  * themes), OSOR/Interoperable Europe (Barcelona, Paris, Munich OSPOs),
  * sovereign.tech (funding figures), x-road.global / NIIS (Estonia).
- * Static-first (like data/unnyc.js); move to Strapi later if needed.
+ * Static-first (like data/unnyc.js); move into the CMS later if needed.
  */
 
 export const primerHero = {

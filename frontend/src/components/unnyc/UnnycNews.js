@@ -3,7 +3,8 @@ import { news as staticNews } from '@/data/unnyc';
 /**
  * UnnycNews — Server component rendering the news and announcements grid.
  * Each card shows source, title, excerpt, date, and an external link.
- * `news` comes from Strapi via the page (static @/data/unnyc as fallback).
+ * `news` is supplied by the page, which falls back to the static @/data/unnyc
+ * list when the CMS returns nothing (currently the case — see that file).
  * Sorted newest-first by machine-readable `sortDate` (ISO) so the most
  * recent announcements lead regardless of source ordering.
  */
