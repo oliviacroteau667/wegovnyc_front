@@ -1,14 +1,13 @@
 "use client";
 import { useState } from 'react';
-
-const STRAPI_URL = (process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337').replace(/\/$/, '');
+import { createSubmission } from '@/lib/api';
 
 /**
  * UnnycCampaignSignup — "Get Updates" email capture for the campaign section.
  *
- * Client component: posts the email to the Strapi `campaign-signup` collection
- * (public `create` permission), tagged with `campaign` so signups are grouped
- * by the campaign they came from. Renders inline success / error states.
+ * Client component: posts the email to Payload's `campaign-signups` collection
+ * (public `create`), tagged with `campaign` so signups are grouped by the
+ * campaign they came from. Renders inline success / error states.
  */
 export default function UnnycCampaignSignup({ campaign = 'un-open-source' }) {
     const [email, setEmail] = useState('');
@@ -32,19 +31,11 @@ export default function UnnycCampaignSignup({ campaign = 'un-open-source' }) {
         setMessage('');
 
         try {
-            const res = await fetch(`${STRAPI_URL}/api/campaign-signups`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    data: {
-                        email: value,
-                        campaign,
-                        source: '/unnyc#open-source',
-                    },
-                }),
+            await createSubmission('campaign-signups', {
+                email: value,
+                campaign,
+                source: '/unnyc#open-source',
             });
-
-            if (!res.ok) throw new Error(`Signup failed (${res.status})`);
 
             setStatus('success');
             setMessage("You're on the list. We'll keep you posted on the campaign.");

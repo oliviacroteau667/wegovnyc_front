@@ -4,26 +4,15 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '127.0.0.1',
-        port: '4337',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '4337',
-        pathname: '/uploads/**',
+        // Payload (Sarapis multi-brand CMS) — hero/media for blog + articles
+        protocol: 'https',
+        hostname: 'next.sarapis.org',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: '*.strapiapp.com',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'dedicated-cherry-1494c7faee.strapiapp.com',
-        pathname: '/uploads/**',
+        hostname: 'sarapis.org',
+        pathname: '/**',
       },
       {
         protocol: 'https',
@@ -37,11 +26,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'strapi.wegov.nyc',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'https',
         hostname: '*.basemaps.cartocdn.com',
         pathname: '/**',
       },
@@ -51,20 +35,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        // Allow Strapi Cloud to embed the site in an iframe for Preview
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://*.strapiapp.com https://dedicated-cherry-1494c7faee.strapiapp.com https://strapi.wegov.nyc http://localhost:1337",
-          },
-        ],
-      },
-    ];
   },
   async redirects() {
     return [
