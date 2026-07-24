@@ -18,9 +18,9 @@ export const metadata = {
 
 /**
  * UNNYC Campaign page — the open letter as a standalone, signable page.
- * Individuals sign, organizations endorse; both go to the Strapi
- * `campaign-endorsement` collection as drafts and appear on the endorser
- * wall below once published (vetting = publishing in the admin).
+ * Individuals sign, organizations endorse; both go to Payload's
+ * `campaign-endorsements` collection and appear on the endorser wall below
+ * once published (vetting = publishing in the Sarapis admin).
  *
  * Revalidated every 5 minutes so newly published endorsements and the live
  * tally appear without a rebuild.

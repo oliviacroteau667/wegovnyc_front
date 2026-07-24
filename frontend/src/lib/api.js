@@ -1,28 +1,28 @@
 /**
- * lib/api.js — Payload adapter (DRAFT for Phase 4 of the multi-brand CMS move).
+ * lib/api.js — content client for the Sarapis Payload CMS (multi-brand).
  *
- * Drop-in replacement for the Strapi client. Keeps the SAME exports
- * (`fetchAPI`, `getStrapiMedia`) and returns the SAME Strapi-v5 response shapes
- * the existing components read (`{ data, meta }`, flattened article fields,
+ * Replaced the old Strapi client (Strapi was retired 2026-07-24). It keeps that
+ * client's exports (`fetchAPI`, `getStrapiMedia`) and returns the same response
+ * shapes the components already read (`{ data, meta }`, flattened article fields,
  * `article.content` as an HTML string, `image.url`, the `global` navbar/footer),
- * so the consuming files (blog list/detail, category, tag, Articles.js, layout.js)
- * need NO changes.
+ * which is why the consuming files (blog list/detail, category, tag, Articles.js,
+ * layout.js) never had to change. The `getStrapiMedia` name is kept only because
+ * those components import it.
  *
- * It talks to the Sarapis Payload REST API, always scoped to this brand via
- * `where[sites.key][equals]=<SITE_KEY>` — so the same file powers any brand by
+ * Requests are always scoped to this brand via
+ * `where[sites.key][equals]=<SITE_KEY>`, so the same file powers any brand by
  * changing one env var.
  *
- * Env:
+ * Env (both optional — the defaults below are the live values):
  *   NEXT_PUBLIC_PAYLOAD_URL   Payload origin (default https://next.sarapis.org)
  *   NEXT_PUBLIC_SITE_KEY      brand key in the Sites collection (default 'wegovnyc')
- *   (NEXT_PUBLIC_STRAPI_URL still read as a fallback origin during cutover)
  *
- * NOT covered here (see NOTES at bottom):
- *   - `/pages` dynamic-zone content (home/about/blog page bodies) — returns an
- *     empty result so consumers fall back to their defaults; migrating those
- *     needs Payload blocks or keeping those pages as React.
- *   - The campaign form POSTs live in the unnyc components, not this file — a
- *     tiny edit there (see `createSubmission` + NOTES).
+ * Scope notes:
+ *   - `/pages` returns an empty result by design: the marketing pages (home,
+ *     /about) are frozen in `src/content/frozen-pages.js` and rendered by
+ *     SectionRenderer, so they need no CMS call. Blog/articles/global are live.
+ *   - Campaign form POSTs go through `createSubmission()` below, called from
+ *     components/unnyc/{UnnycCampaignSignup,CampaignSignForm}.js.
  */
 
 const PAYLOAD_URL = (
@@ -295,27 +295,17 @@ function lexicalToHTML(content) {
 }
 
 /*
- * NOTES / remaining front-end edits for Phase 4
- * ---------------------------------------------
- * 1. Env: set NEXT_PUBLIC_PAYLOAD_URL=https://next.sarapis.org and
- *    NEXT_PUBLIC_SITE_KEY=wegovnyc (Vercel + .env). Leaving NEXT_PUBLIC_STRAPI_URL
- *    set is harmless (only used as origin fallback).
- * 2. next.config.mjs images.remotePatterns: add the Payload host
- *    (next.sarapis.org) alongside strapi.wegov.nyc so <Image> loads heroes.
- * 3. Campaign forms (components/unnyc/UnnycCampaignSignup.js + CampaignSignForm.js):
- *    replace their direct `fetch(`${STRAPI_URL}/api/campaign-signups`, { body:
- *    JSON.stringify({ data: {...} }) })` with:
- *        import { createSubmission } from '@/lib/api';
- *        await createSubmission('campaign-signups', { email, campaign, source });
- *    (Payload wants a FLAT body, not Strapi's { data: {...} } wrapper. Endorsements
- *    → createSubmission('campaign-endorsements', { kind, name, email, ... }).)
- * 4. `/pages` (home/about/blog dynamic zones): out of scope here. The blog page
- *    degrades gracefully (falls back to default hero + still lists articles). The
- *    home page renders Strapi page sections — decide whether to (a) recreate those
- *    sections as Payload blocks and map them here, or (b) keep those pages as React
- *    in the frontend. wegov.nyc's main content (/unnyc) is already React, so (b) is
- *    the smaller path.
- * 5. Draft mode: Payload uses ?draft=true (wired above) — confirm the frontend's
- *    draftMode cookie/token flow if preview is needed; public reads already gate to
- *    published via Payload access control.
+ * How the content is wired (as shipped)
+ * -------------------------------------
+ * - Editing: content lives in the Sarapis Payload admin. A post appears on this
+ *   site when its "Brands" field includes `wegovnyc`; the same post can also be
+ *   published to other brands (e.g. `databook`) from the one entry.
+ * - Marketing pages: home and /about are frozen in src/content/frozen-pages.js
+ *   (snapshotted section data rendered by SectionRenderer). Edit that file to
+ *   change them — they intentionally make no CMS call. The `sections.articles`
+ *   block inside them still pulls the latest posts live via this client.
+ * - Media: article/hero images come from Payload; the frozen pages' own images
+ *   are served from /public/frozen-media.
+ * - Draft mode: Payload uses ?draft=true (wired above). Public reads are gated to
+ *   published docs by Payload's access control.
  */

@@ -21,9 +21,10 @@ export async function generateMetadata() {
     };
   } catch (error) {
     console.error("Error fetching global metadata:", error);
+    // Fallback metadata if the CMS is unreachable.
     return {
-      title: 'WeGov Marketing',
-      description: 'Built with Strapi & Next.js',
+      title: 'WeGovNYC',
+      description: 'Civic technology projects that help New Yorkers.',
     };
   }
 }

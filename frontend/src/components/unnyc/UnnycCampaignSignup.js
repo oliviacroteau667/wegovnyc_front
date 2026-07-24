@@ -20,7 +20,7 @@ export default function UnnycCampaignSignup({ campaign = 'un-open-source' }) {
         if (status === 'submitting') return;
 
         const value = email.trim();
-        // Light client-side check; Strapi's `email` type validates authoritatively.
+        // Light client-side check; Payload's `email` field validates authoritatively.
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
             setStatus('error');
             setMessage('Please enter a valid email address.');
