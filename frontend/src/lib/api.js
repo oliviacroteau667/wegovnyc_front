@@ -25,7 +25,7 @@
  *     /about) are frozen in `src/content/frozen-pages.js` and rendered by
  *     SectionRenderer, so they need no CMS call.
  *   - Campaign form POSTs go through `createSubmission()` below, called from
- *     components/unnyc/{UnnycCampaignSignup,CampaignSignForm}.js.
+ *     components/unnyc/CampaignSignForm.js.
  */
 
 const PAYLOAD_URL = (

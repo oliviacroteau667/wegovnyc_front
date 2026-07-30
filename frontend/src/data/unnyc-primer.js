@@ -21,8 +21,6 @@ export const primerHero = {
         'Every June, UN Open Source Week brings 2,600+ participants from 120+ countries to UN Headquarters in Manhattan. In 2025, Barcelona became the first city to formally endorse the UN Open Source Principles. The city that hosts the movement hasn’t joined it — yet.',
     ctas: [
         { text: 'Sign the Open Letter', href: '/unnyc/campaign', style: 'primary', internal: true },
-        { text: 'Key Concepts', href: '#concepts', style: 'outline' },
-        { text: 'Case Studies', href: '#cases', style: 'outline' },
     ],
     stats: [
         { number: '8', label: 'UN Open Source Principles' },
@@ -90,7 +88,7 @@ export const concepts = {
         {
             term: 'Open Source (FOSS)',
             def: 'Software whose source code anyone can inspect, use, modify, and share. "Free and open source software" is about freedom and public auditability, not price.',
-            nyc: 'NYC already publishes city code on GitHub — open source is a practice the city has started, not a leap into the unknown.',
+            nyc: 'A handful of NYC agencies already publish code on GitHub on their own initiative. Endorsement would turn that scattered habit into a citywide standard.',
             link: { url: 'https://en.wikipedia.org/wiki/Free_and_open-source_software', label: 'Wikipedia' },
         },
         {
@@ -240,86 +238,135 @@ export const cases = {
     ],
 };
 
-/* Reframed policy intersections — open source & digital governance only.
-   Same card shape the hub's UnnycPolicy uses (icon / title / un / nyc). */
+/* The crosswalk — all eight UN Open Source Principles mapped to NYC reality.
+   Each item: a short UN/NYC summary pair (used in the page's sticky nav and
+   header strip), then three full paragraphs — the principle, the reality,
+   and the gap to close. The gap is the section the page treats as the point:
+   what closing it would concretely mean for an average New Yorker, not just
+   for city government. */
 export const primerPolicies = {
-    eyebrow: 'The Crosswalk',
-    title: 'Turning UN Concepts into NYC Reality',
-    lede: 'NYC is closer to the UN’s open source posture than most people inside the city realize. Map the concepts to what already exists.',
+    eyebrow: 'Why It Matters',
+    title: 'Eight Principles, Eight NYC Realities',
+    lede: 'NYC is closer to the UN’s open source posture than most people inside the city realize. Here is what each of the eight UN Open Source Principles would concretely mean for New York — and for the New Yorkers who use what the city builds.',
     items: [
         {
             icon: '🔓',
             slug: 'open-by-default',
             title: 'Open by Default',
-            un: 'UN Open Source Principle #1: open source as the standard approach for projects across the UN system.',
-            nyc: 'NYC Open Data Law (Local Law 11 of 2012) made data open by default — the same move for code is the natural next step. City code already appears on GitHub.',
-            detail: [
-                '"Open by default" is the first of the eight UN Open Source Principles, and it reverses the usual burden of proof. Instead of asking teams to justify why a piece of software should be open, it asks them to justify why it should be closed — with legitimate exceptions for security, privacy, or third-party licensing. It is a posture, not an absolute: the goal is that openness becomes the presumption a project starts from, rather than an afterthought someone has to fight for.',
-                'New York City has already made exactly this move once — with data. The Open Data Law (Local Law 11 of 2012) is among the strongest municipal transparency mandates in the country, requiring city agencies to publish their public data on the NYC Open Data portal by default. The cultural and legal precedent for an "open by default" presumption is therefore not hypothetical in New York; it is a decade old, and city code already appears in public repositories on GitHub.',
-                'What is missing is the same presumption extended from data to software. Endorsing the Principle would formalize what parts of the city already do informally, and give agencies clear cover to publish: a stated default, a short list of valid exceptions, and the expectation that new projects begin in the open. It costs little, aligns with existing law, and turns scattered good practice into policy.',
-            ],
-        },
-        {
-            icon: '🏛️',
-            slug: 'nyc-ospo',
-            title: 'An NYC OSPO',
-            un: 'The UN runs its own OSPO and convenes "OSPOs for Good" at UN Headquarters; Paris, Munich, and Barcelona show the city version.',
-            nyc: 'The Office of Technology & Innovation already coordinates citywide tech — it is the natural institutional home for an NYC OSPO.',
-            detail: [
-                'An Open Source Programme Office is the institutional home for an organization’s open source practice. It coordinates four things that otherwise happen ad hoc: what open source the organization uses, what of its own work it publishes, how it contributes back to the projects it depends on, and how it stays secure and legally compliant while doing so. The UN runs one, and its annual "OSPOs for Good" convening at UN Headquarters exists precisely to help governments stand theirs up.',
-                'Cities have shown what this looks like at the municipal scale. Paris built one of the first city OSPOs and now maintains a platform of 300+ services other cities can reuse; Munich’s OSPO operates under a "public money, public code" mandate; Barcelona paired its endorsement of the UN Principles with a commitment to create one. In each case the OSPO is small — a team and a mandate, not a new agency — but it is the difference between open source happening by accident and happening on purpose.',
-                'New York already has the natural host: the Office of Technology & Innovation coordinates technology across city agencies. An NYC OSPO would not require new infrastructure so much as a defined remit — inventory the city’s open source, set a publish-by-default workflow, review contributions and security, and advise agencies and vendors. It is the single most concrete institutional step the city could take, and the one every peer city has found repays itself.',
-            ],
-        },
-        {
-            icon: '🗽',
-            slug: 'dpi',
-            title: 'Digital Public Infrastructure',
-            un: 'DPI Day at UN OSW: identity, payments, and data exchange as open, interoperable public rails, with a Universal Safeguards Framework.',
-            nyc: 'Cities worldwide face the same needs — identity, payments, benefits access — and increasingly share open components rather than each buying its own. The question is whether NYC builds on reusable open rails or locks into another silo.',
-            detail: [
-                'Digital Public Infrastructure is the idea that the digital systems a society runs on — identity, payments, data exchange — should be treated like roads or the power grid: shared, interoperable public rails rather than a collection of disconnected proprietary silos. UN Open Source Week dedicates a full day to it, and pairs it with a Universal DPI Safeguards Framework so that these rails are built to protect privacy, security, and inclusion from the start rather than bolting them on later.',
-                'The strategic insight of DPI is that cities and countries face nearly identical problems — registering residents, moving money, sharing records between agencies — and increasingly solve them once and share the result. Estonia open-sourced its national data-exchange layer (X-Road) and roughly twenty countries now run it; Barcelona’s participation platform (Decidim) runs in close to ninety governments. The alternative — every jurisdiction commissioning its own bespoke system — is slower, costlier, and locks each buyer into a single vendor.',
-                'For New York the question is not whether it has DPI — any large resident-facing platform is DPI in effect — but whether it builds on open, reusable, standards-based components or on closed ones. Choosing open rails keeps the city able to audit, extend, and move its own systems, lets it draw on solutions other governments have already hardened, and lets its own investments become reusable by others. The Universal Safeguards Framework gives NYC a ready-made rights checklist to apply along the way.',
-            ],
+            un: 'UN Open Source Principle #1: open source as the standard approach for every project across the UN system.',
+            nyc: 'NYC already applies this logic to data. The same default for code is the next step — and a few agencies have already started.',
+            principle:
+                '"Open by default" reverses the usual burden of proof. Instead of asking a team to justify why a piece of software should be open, it asks them to justify why it should stay closed — with legitimate exceptions for security, privacy, or third-party licensing. It is a starting posture, not an absolute: openness is the presumption a project begins from, not an afterthought someone has to fight for later.',
+            reality:
+                'New York already lives by a version of this rule — just not for software yet. The Open Data Law (Local Law 11 of 2012) is one of the strongest municipal transparency mandates in the country: it requires city agencies to publish their public data by default, no special request needed. A handful of agencies have taken the same approach with their own code, publishing repositories on GitHub on their own initiative. What doesn’t yet exist is a citywide rule that makes that the default, rather than a matter of which agency happens to care.',
+            gap:
+                'Endorsing this principle would turn scattered good habits into policy: a stated default, a short list of legitimate exceptions, and an expectation that new city projects start in the open. For the average New Yorker, that means the tools your government builds — a benefits calculator, a 311 tracker, a permit form — can be checked by outside experts, reused by other agencies instead of rebuilt from scratch, and fixed faster because more people can find and flag what’s broken.',
         },
         {
             icon: '🤝',
             slug: 'contribute-back',
             title: 'Contribute Back',
-            un: 'Principle #2: active participation in the open source ecosystem, not just consumption.',
-            nyc: 'NYC Planning Labs has shipped open source tools for years — proof the city can contribute, not only consume. Policy would scale the practice.',
-            detail: [
-                'The second UN Open Source Principle is "contribute back": institutions that benefit from open source should be active participants in it, not just downstream consumers. In practice that means upstreaming bug fixes and improvements to the projects an organization depends on, publishing genuinely reusable tools rather than one-off scripts, and engaging with the communities that maintain the software the organization relies on. It is the difference between taking from a commons and helping sustain it.',
-                'New York has a real track record here to build on. NYC Planning Labs spent years shipping open source mapping and civic tools in public, and other city teams have published code and data pipelines that outside developers — and other governments — have reused. This proves the city can contribute, not merely consume; what has been missing is the policy and the plumbing to make it routine rather than dependent on individual teams’ initiative.',
-                'Scaling the practice is mostly a matter of permission and process: a contribution policy that lets staff upstream their fixes, a default that reusable work is published, and light guidance on licensing and community norms. The payoff is concrete — better-maintained dependencies, a stronger reputation that helps recruit technologists, and reusable tools that raise the city’s leverage on every future project.',
-            ],
+            un: 'UN Open Source Principle #2: active participation in the open source ecosystem, not just downstream consumption.',
+            nyc: 'NYC Planning Labs has shipped open source tools for years — proof the city can contribute, not only consume.',
+            principle:
+                '"Contribute back" holds that institutions benefiting from open source should be active participants in it, not just downstream consumers: upstreaming fixes to the projects they depend on, publishing genuinely reusable tools rather than one-off scripts, and engaging the communities maintaining the software they rely on. It is the difference between taking from a commons and helping sustain it.',
+            reality:
+                'New York has a real track record to build on. NYC Planning Labs spent years shipping open source mapping and civic tools in public, and other city teams have published code and data pipelines that outside developers — and other governments — have reused. What has been missing is the policy and the plumbing to make that routine, rather than dependent on which individual team happens to take the initiative.',
+            gap:
+                'Scaling the practice mostly takes permission and process: a policy that lets staff upstream fixes, a default that reusable work gets published, and light guidance on licensing. For the average New Yorker, a city that contributes back means better tools arrive faster — the mapping library or data pipeline city staff improve today is the same one a nonprofit tracking housing conditions, or a journalist digging into 311 complaints, can build on tomorrow. Public money spent once, put to work far beyond city government.',
+        },
+        {
+            icon: '🛡️',
+            slug: 'secure-by-design',
+            title: 'Secure by Design',
+            un: 'UN Open Source Principle #3: security built in from the first line of code, with a clear channel to report a flaw before it’s exploited.',
+            nyc: '[NEEDS SOURCE: NYC’s current vulnerability-disclosure practices across agencies] — most city software today runs on vendor systems no outside researcher can inspect at all.',
+            principle:
+                'Secure by design treats security as a first-class requirement, not a patch applied after launch: threat modeling before code is written, dependencies tracked and kept current, and — critically — a public, no-retaliation channel for outside researchers to report a flaw responsibly. This doesn’t mean open source is automatically safer than closed software; it means security is verifiable rather than taken on faith, because anyone qualified can check the work instead of trusting a vendor’s word for it.',
+            reality:
+                'New York runs a mix of homegrown and vendor-purchased systems, and for the vendor-purchased majority, residents, journalists, and independent security researchers have no way to check whether the software handling a benefits application or a child’s school records is actually secure — they can only take the vendor’s claims on faith. [NEEDS SOURCE: any NYC agency vulnerability-disclosure program or past incident worth citing]. When a flaw exists in closed software, the public often learns about it only after someone has already exploited it.',
+            gap:
+                'Endorsing this principle pushes city technology toward an auditable security posture and a real responsible-disclosure channel — the same posture bug-bounty programs and open source foundations already run on. For the average New Yorker, that’s the difference between a breach nobody could have caught in advance and one an outside researcher flags weeks before it could do any damage, because more than one vendor’s staff are allowed to go looking for the problem.',
+        },
+        {
+            icon: '🧑‍🤝‍🧑',
+            slug: 'foster-inclusion',
+            title: 'Foster Inclusion',
+            un: 'UN Open Source Principle #4: inclusive participation and community-building, so the people building the software reflect the people it serves.',
+            nyc: 'Groups like BetaNYC already organize New Yorkers around civic technology — the constituency for this already exists; it just isn’t connected to city government yet.',
+            principle:
+                'Fostering inclusion means deliberately building a broad, diverse contributor base, not treating it as a nice-to-have: welcoming first-time contributors, writing documentation for non-experts, translating into the languages a community actually speaks, and making sure the loudest voices in a project aren’t the only ones steering it.',
+            reality:
+                'New York already has the raw ingredients — a large, technically skilled, famously diverse population, and civic tech groups like BetaNYC that have run open-data and open-government meetups for years, independent of any city mandate. What’s missing is a formal bridge between that existing community and city government’s own software work; today, a resident who wants to help fix a city tool has no clear door to walk through.',
+            gap:
+                'Closing this gap means actively inviting that community in: a published contributor guide, key civic tools and their documentation translated into the languages New Yorkers actually speak, and community contributions treated as normal rather than exceptional. For the average New Yorker, that’s the difference between government software designed for you and government software partly designed by people like you — including residents without a technical background who understand better than anyone where a form or a city tool is actually failing them.',
         },
         {
             icon: '🧩',
-            slug: 'procurement',
-            title: 'Open Standards & Procurement',
-            un: 'GDC and DPI frameworks stress interoperability and open standards as the guard against lock-in.',
-            nyc: 'NYC’s procurement rules are where open standards become real — an "open by default" preference clause is the highest-leverage reform available.',
-            detail: [
-                'Open standards — publicly documented formats and protocols that any vendor can implement — are the mechanism that keeps digital systems an ecosystem rather than a trap. The Global Digital Compact and the UN’s DPI frameworks return to them repeatedly, because interoperability is what lets a government change vendors, connect systems built by different makers, and avoid the slow accumulation of lock-in that makes every proprietary renewal non-negotiable.',
-                'For a city, procurement is where this stops being philosophy and becomes leverage. The contracts NYC signs decide whether its data stays portable, whether its formats are documented, and whether a future administration can switch providers without rebuilding from scratch. A preference clause — favoring open standards and open source where they meet the need, and requiring data export and documented interfaces — is the single highest-leverage reform available, because it shapes every system the city buys for years afterward.',
-                'New York’s scale makes this unusually powerful. As one of the largest municipal technology buyers in the United States, the standards NYC writes into its solicitations ripple through the vendor market well beyond the five boroughs. Other governments have already written open source and open-standards preferences into public procurement; endorsing the UN Principles gives NYC both the language and the international precedent to do the same.',
-            ],
+            slug: 'design-for-reusability',
+            title: 'Design for Reusability',
+            un: 'UN Open Source Principle #5: build software that works across platforms and contexts, so one government’s solution becomes every government’s head start.',
+            nyc: 'NYC’s procurement rules are where reusability becomes real or doesn’t — an open-standards preference clause is the highest-leverage reform available to city buyers.',
+            principle:
+                'Open standards — publicly documented formats and protocols any vendor can implement — are what keeps a digital system part of an ecosystem rather than a trap. Interoperability is what lets a government change vendors, connect systems built by different makers, and avoid the slow accumulation of lock-in that makes every proprietary renewal non-negotiable.',
+            reality:
+                'For a city, procurement is where this stops being philosophy and becomes leverage. The contracts NYC signs decide whether its data stays portable, whether formats are documented, and whether a future administration can switch providers without rebuilding from scratch. As one of the largest municipal technology buyers in the country, the standards NYC writes into its solicitations ripple through the vendor market well beyond the five boroughs.',
+            gap:
+                'A preference clause — favoring open standards and open source where they meet the need, and requiring data export and documented interfaces — shapes every system the city buys for years afterward. For the average New Yorker, this shows up as a government that can actually fix things: a slow benefits portal or a broken permit form can be handed to a different vendor, or fixed in-house, instead of the city being stuck for years with whoever won the original contract.',
         },
         {
-            icon: '🌐',
-            slug: 'global-table',
-            title: 'A Seat at the Global Table',
-            un: 'UN Open Source Week brings 120+ countries to Manhattan every June; the Global Digital Compact gives the shared vocabulary.',
-            nyc: 'NYC pioneered city-to-UN reporting with its Voluntary Local Review (2018) — endorsement of the Principles is the same move for technology.',
-            detail: [
-                'Every June, UN Open Source Week brings more than 2,600 participants from over 120 countries to UN Headquarters — in New York City. The Global Digital Compact, adopted by member states in 2024, gives that gathering a shared vocabulary: digital public goods, digital public infrastructure, open standards. It is, in effect, a standing global table on public-interest technology, convened a subway ride from City Hall, at which New York is currently a host but not a participant.',
-                'New York has a distinctive habit of being first to that kind of table. It was the first U.S. city to submit a Voluntary Local Review of its Sustainable Development Goal progress to the UN in 2018 — a model since copied by cities worldwide — and the first U.S. city to join the UN’s Safe Cities initiative. In each case a relatively low-cost act of alignment gave the city outsized visibility and leadership. Endorsing the UN Open Source Principles is the same move, applied to technology.',
-                'The practical benefits of taking the seat are real: access to a global community of practice, to solutions other governments have already built and battle-tested, and to the contacts who can help NYC adopt them. And there is a first-mover opportunity — no city in the Americas has yet endorsed the Principles. New York, which hosts the movement each year, is the natural candidate to be first to join it.',
-            ],
+            icon: '📚',
+            slug: 'provide-documentation',
+            title: 'Provide Documentation',
+            un: 'UN Open Source Principle #6: thorough documentation for the people who use, maintain, and build on a project — not just its original authors.',
+            nyc: 'When a vendor contract ends or a key city employee leaves, institutional knowledge of how a system actually works often leaves with them.',
+            principle:
+                'Good documentation is what lets someone other than the original author safely use, fix, or extend a piece of software: what it does, how to run it, what happens when an input is wrong, who to ask when it breaks. In the open source world it’s a deliverable, reviewed and maintained alongside the code — not something written once and left to rot.',
+            reality:
+                '[NEEDS SOURCE: specific examples of under-documented city systems] — but the general pattern is familiar in any large institution buying software: vendor systems often ship with documentation that is thin, outdated, or contractually restricted to the vendor’s own staff. When a contract lapses or a key city technologist moves on, the working knowledge of how a critical system runs can leave with them.',
+            gap:
+                'Requiring real documentation — plain-language, kept current, and owned by the city rather than locked inside a vendor’s support desk — closes that gap directly. For the average New Yorker, that means fewer systems down for weeks because nobody left could explain how they worked, and faster fixes when something does break, because the next person to touch the code isn’t reverse-engineering it from scratch on the taxpayer’s clock.',
+        },
+        {
+            icon: '🌱',
+            slug: 'rise',
+            title: 'RISE',
+            un: 'UN Open Source Principle #7 — Recognize, Incentivize, Support, and Empower: institutions should formally back the people doing open source work, not leave it to individual initiative.',
+            nyc: 'The Office of Technology & Innovation already coordinates citywide tech — the natural institutional home for the office that would make this real.',
+            principle:
+                'An Open Source Programme Office is the institutional mechanism behind this principle: a small team that coordinates what an organization uses, what it publishes, how it contributes back, and how it stays secure while doing so. The UN runs one, and its annual "OSPOs for Good" convening at UN Headquarters exists to help governments stand theirs up.',
+            reality:
+                'Cities have shown what this looks like at municipal scale: Paris built one of the first city OSPOs and now maintains a platform of 300+ reusable services; Munich’s OSPO runs under a "public money, public code" mandate; Barcelona paired its UN endorsement with a commitment to create one. In each case the office is small — a team and a mandate, not a new agency. New York already has the natural host in the Office of Technology & Innovation, which coordinates technology across city agencies today.',
+            gap:
+                'Without a dedicated office, good open source work inside city government depends entirely on which individual staff happen to care enough to push for it in their spare time — and it disappears when they leave. An NYC OSPO makes that support structural instead of personal. For the average New Yorker, that’s the difference between one good civic tool existing because an employee fought for it, and dozens existing because the city built a system that reliably produces them.',
+        },
+        {
+            icon: '♻️',
+            slug: 'sustain-and-scale',
+            title: 'Sustain and Scale',
+            un: 'UN Open Source Principle #8: build solutions that meet evolving needs over time — funded and maintained for the long run, not abandoned after launch.',
+            nyc: 'Cities everywhere face the same needs — identity, payments, benefits access — and increasingly share the maintenance burden instead of each re-buying its own.',
+            principle:
+                'Sustaining and scaling means treating the digital systems a city runs on — identity, payments, data exchange — like roads or the power grid: shared, interoperable infrastructure kept in working order for decades, not a product that ships once and is left to decay. Estonia open-sourced its national data-exchange layer and roughly twenty countries now run it; Barcelona’s participation platform runs in close to ninety governments. Sharing the build is only half of it — someone still has to fund the ongoing maintenance.',
+            reality:
+                'New York’s question isn’t whether it has this kind of infrastructure — any large resident-facing platform is infrastructure in effect — but whether it’s built on open, reusable, standards-based components that can be maintained for the long haul, or on closed ones the city can’t sustain without the original vendor.',
+            gap:
+                'The mechanism other governments use to fund sustained maintenance is a modest public fund for the software the city already depends on — modeled on Germany’s Sovereign Tech Agency, which has put over €24 million into keeping critical open source infrastructure maintained, with demand far outstripping the money available. For the average New Yorker, a sustained system is simply one that keeps working: it doesn’t quietly degrade for years because the one person who understood it left, or vanish because a vendor discontinued a product line.',
         },
     ],
+    /* The closing narrative for /unnyc/crosswalk — not a principle, but the
+       answer to "why is NYC central to this movement," asked right after the
+       eight-principle walkthrough. */
+    closing: {
+        icon: '🌐',
+        eyebrow: 'One Last Question',
+        title: 'Why New York Is Central to This Movement',
+        paragraphs: [
+            'Every June, UN Open Source Week brings more than 2,600 participants from over 120 countries to UN Headquarters — in New York City. The Global Digital Compact, adopted by member states in 2024, gives that gathering a shared vocabulary: digital public goods, digital public infrastructure, open standards. It is, in effect, a standing global table on public-interest technology, convened a subway ride from City Hall, at which New York is currently a host but not a participant.',
+            'New York has a distinctive habit of being first to that kind of table. It was the first U.S. city to submit a Voluntary Local Review of its Sustainable Development Goal progress to the UN, in 2018 — a model since copied by cities worldwide — and the first U.S. city to join the UN’s Safe Cities initiative. In each case a relatively low-cost act of alignment gave the city outsized visibility and leadership. Endorsing the UN Open Source Principles is the same move, applied to technology.',
+            'No city in the Americas has yet endorsed the Principles. New York, which hosts the movement every June, is the natural candidate to be first — gaining access to a global community of practice, to solutions other governments have already built and battle-tested, and to the contacts who can help it adopt them.',
+        ],
+    },
 };
 
 /* Global map — governments and institutions advancing public-sector open source. */
@@ -393,6 +440,7 @@ export const primerResources = {
                 { text: 'UN Open Source Week', url: 'https://www.unopensource.org/', desc: 'The annual convening at UN HQ — agenda, recordings, and community.' },
                 { text: 'The UN Open Source Principles', url: 'https://unite.un.org/en/news/sixteen-organizations-endorse-un-open-source-principles', desc: 'The eight principles and the launch announcement.' },
                 { text: 'Global Digital Compact', url: 'https://www.un.org/global-digital-compact', desc: 'The member-state framework naming DPGs and DPI as shared priorities.' },
+                { text: 'NYC Government Guide to UN Engagement', url: '/unnyc/guide', internal: true, desc: 'A practical guide for NYC government staff on OSW, OSPOs, GAM-4-DC, WUF13, and first steps.' },
             ],
         },
         {

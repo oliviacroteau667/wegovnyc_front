@@ -1,0 +1,104 @@
+/* ============================================
+   /unnyc/start — "I am new to open source"
+   Lives in @layer unnyc; inherits --unnyc-* tokens from .unnyc-page
+   and reuses ../primer.css for the shared section components
+   (PrimerConcepts, PrimerMovement, PrimerMovementNow).
+   ============================================ */
+
+@layer unnyc {
+
+  .unnyc-start__header {
+    padding: var(--unnyc-sp-12) 0 var(--unnyc-sp-10);
+    background:
+      radial-gradient(ellipse at 80% -20%, rgba(75, 146, 219, 0.12), transparent 55%),
+      var(--unnyc-warm-white);
+    border-bottom: 1px solid var(--unnyc-border);
+    text-align: center;
+  }
+
+  .unnyc-start__eyebrow {
+    font-size: var(--unnyc-fs-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--unnyc-gold-dark);
+    margin-bottom: var(--unnyc-sp-4);
+  }
+
+  .unnyc-start__title {
+    font-family: var(--unnyc-font-display);
+    font-weight: 400;
+    font-size: var(--unnyc-fs-4xl);
+    line-height: 1.15;
+    color: var(--unnyc-navy);
+    margin: 0 auto var(--unnyc-sp-5);
+    max-width: 18ch;
+  }
+
+  .unnyc-start__lede {
+    font-size: var(--unnyc-fs-lg);
+    color: var(--unnyc-text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .unnyc-start-principles__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--unnyc-sp-5);
+  }
+
+  .unnyc-start-principle {
+    background: var(--unnyc-surface);
+    border: 1px solid var(--unnyc-border);
+    border-radius: var(--unnyc-radius-md);
+    padding: var(--unnyc-sp-6);
+    box-shadow: var(--unnyc-shadow-sm);
+  }
+
+  .unnyc-start-principle__icon {
+    display: block;
+    font-size: var(--unnyc-fs-2xl);
+    margin-bottom: var(--unnyc-sp-3);
+  }
+
+  .unnyc-start-principle__title {
+    font-family: var(--unnyc-font-body);
+    font-size: var(--unnyc-fs-base);
+    font-weight: 700;
+    color: var(--unnyc-navy);
+    margin: 0 0 var(--unnyc-sp-2);
+  }
+
+  .unnyc-start-principle__desc {
+    font-size: var(--unnyc-fs-sm);
+    color: var(--unnyc-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .unnyc-start__next {
+    padding: var(--unnyc-sp-16) 0;
+    text-align: center;
+  }
+
+  .unnyc-start__next p {
+    font-size: var(--unnyc-fs-xl);
+    font-family: var(--unnyc-font-display);
+    color: var(--unnyc-navy);
+    margin: 0 0 var(--unnyc-sp-6);
+  }
+
+  @media (max-width: 900px) {
+    .unnyc-start-principles__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .unnyc-start-principles__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { primerResources } from '@/data/unnyc-primer';
 
 /**
@@ -25,9 +26,13 @@ export default function PrimerResources() {
                             <ul className="unnyc-pr-resources__links">
                                 {group.links.map((link, j) => (
                                     <li key={j}>
-                                        <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                            {link.text} ↗
-                                        </a>
+                                        {link.internal ? (
+                                            <Link href={link.url}>{link.text} →</Link>
+                                        ) : (
+                                            <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                                {link.text} ↗
+                                            </a>
+                                        )}
                                         <p>{link.desc}</p>
                                     </li>
                                 ))}
