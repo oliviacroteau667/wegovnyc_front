@@ -8,7 +8,7 @@ const PATHS = [
     },
     {
         href: '/unnyc/crosswalk',
-        question: 'I want to know why open source matters to me.',
+        question: 'I want to know why open source matters to NYC.',
         answer: 'We’ll show you exactly how open source principles can make NYC work better for you.',
     },
     {

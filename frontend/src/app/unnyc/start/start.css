@@ -59,7 +59,10 @@
 
   .unnyc-start-principle__icon {
     display: block;
-    font-size: var(--unnyc-fs-2xl);
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    object-position: left center;
     margin-bottom: var(--unnyc-sp-3);
   }
 

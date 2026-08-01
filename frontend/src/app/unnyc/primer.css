@@ -336,6 +336,7 @@
     border-radius: var(--unnyc-radius-md);
     padding: var(--unnyc-sp-6);
     box-shadow: var(--unnyc-shadow-sm);
+    scroll-margin-top: calc(var(--pr-header-h, 130px) + 28px);
   }
 
   .unnyc-pr-concept__term {
@@ -466,7 +467,10 @@
   }
 
   .unnyc-pr-cw__icon {
-    font-size: var(--unnyc-fs-3xl);
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .unnyc-pr-cw__title {
@@ -477,52 +481,67 @@
     margin: 0;
   }
 
-  .unnyc-pr-cw__summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--unnyc-sp-5);
-    margin-bottom: var(--unnyc-sp-8);
+  /* --- Glossary term popup (GlossaryTerm.js) --- */
+  .unnyc-gloss {
+    position: relative;
+    display: inline-block;
   }
 
-  .unnyc-pr-cw__col {
-    padding: var(--unnyc-sp-5);
-    background: var(--unnyc-surface);
-    border: 1px solid var(--unnyc-border);
-    border-radius: var(--unnyc-radius-md);
+  .unnyc-page .unnyc-gloss__link {
+    color: inherit;
+    text-decoration: underline solid;
+    text-decoration-color: var(--unnyc-gold-dark);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
   }
 
-  .unnyc-pr-cw__col p {
-    margin: 0;
-    font-size: var(--unnyc-fs-sm);
-    color: var(--unnyc-text-secondary);
-    line-height: 1.6;
-  }
-
-  .unnyc-pr-cw__col-label {
-    font-size: var(--unnyc-fs-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 0 0 var(--unnyc-sp-2);
-  }
-
-  .unnyc-pr-cw__col-label--un {
+  .unnyc-page .unnyc-gloss__link:hover,
+  .unnyc-page .unnyc-gloss__link:focus {
     color: var(--un-blue-dark);
   }
 
-  .unnyc-pr-cw__col-label--nyc {
-    color: var(--unnyc-gold-dark);
+  .unnyc-gloss__tip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: max-content;
+    max-width: 280px;
+    padding: var(--unnyc-sp-3) var(--unnyc-sp-4);
+    background: var(--unnyc-navy-deep);
+    color: #ffffff;
+    font-size: var(--unnyc-fs-xs);
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    border-radius: var(--unnyc-radius-sm);
+    box-shadow: var(--unnyc-shadow-lg);
+    pointer-events: none;
   }
 
-  .unnyc-pr-cw__prose p {
-    font-size: var(--unnyc-fs-lg);
-    line-height: 1.75;
-    color: var(--unnyc-text-primary);
-    margin: 0 0 var(--unnyc-sp-4);
+  .unnyc-gloss__tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--unnyc-navy-deep);
   }
 
-  .unnyc-pr-cw__prose p:last-child {
-    margin-bottom: 0;
+  @media (max-width: 640px) {
+    .unnyc-gloss__tip {
+      left: 0;
+      transform: none;
+      max-width: 240px;
+    }
+
+    .unnyc-gloss__tip::after {
+      left: 16px;
+      transform: none;
+    }
   }
 
   /* --- Persuasive intro ("why it matters") --- */
@@ -685,12 +704,6 @@
   .unnyc-pr-cw__foot-ctas .unnyc-btn--outline {
     color: var(--unnyc-navy);
     border-color: var(--unnyc-border);
-  }
-
-  @media (max-width: 640px) {
-    .unnyc-pr-cw__summary {
-      grid-template-columns: 1fr;
-    }
   }
 
   /* --- Case studies --- */

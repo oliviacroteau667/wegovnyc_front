@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import { openSource } from '@/data/unnyc';
 
-/* Same icon set/order as the crosswalk's eight principle cards
-   (data/unnyc-primer.js primerPolicies.items), so a reader who has seen
-   one recognizes the other. */
-const ICONS = ['🔓', '🤝', '🛡️', '🧑‍🤝‍🧑', '🧩', '📚', '🌱', '♻️'];
+/* Same icon set/order as the crosswalk's eight principle sections
+   (app/unnyc/crosswalk/page.js), so a reader who has seen one recognizes
+   the other. Files live in public/principle-icons/ (see
+   scripts/process-principle-icons.py). */
+const ICONS = Array.from({ length: 8 }, (_, i) => `/principle-icons/princ${i + 1}.png`);
 
 /**
  * PrincipleDefinitions — plain-English definitions of the eight UN Open
@@ -29,7 +31,13 @@ export default function PrincipleDefinitions() {
                 <div className="unnyc-start-principles__grid">
                     {openSource.principles.map((p, i) => (
                         <article key={i} className="unnyc-start-principle">
-                            <span className="unnyc-start-principle__icon" aria-hidden="true">{ICONS[i]}</span>
+                            <Image
+                                src={ICONS[i]}
+                                alt=""
+                                width={56}
+                                height={56}
+                                className="unnyc-start-principle__icon"
+                            />
                             <h3 className="unnyc-start-principle__title">{i + 1}. {p.title}</h3>
                             <p className="unnyc-start-principle__desc">{p.desc}</p>
                         </article>

@@ -23,7 +23,7 @@ export const metadata = {
  * /unnyc/start — "I am new to open source." Orientation for a reader with
  * no background: vocabulary, the eight UN Open Source Principles, the
  * movement's history, and who has already signed on. Leads into
- * /unnyc/crosswalk ("why it matters to me").
+ * /unnyc/crosswalk ("why this matters to NYC").
  */
 export default function StartPage() {
     return (
