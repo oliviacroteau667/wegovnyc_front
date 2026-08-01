@@ -296,15 +296,6 @@ export const endorsers = {
         { name: 'Linux Professional Institute', url: 'https://www.lpi.org/' },
         { name: 'European Open Source Academy', url: 'https://opensource.academy/' },
     ],
-    city: {
-        name: 'Barcelona',
-        desc: 'First city in the world to endorse (November 2025)',
-    },
-    cta: {
-        text: 'The list of cities has one name on it. Help add New York’s — sign or endorse the open letter.',
-        href: '/unnyc/campaign',
-        label: 'Read & Sign the Open Letter',
-    },
 };
 
 export const primerResources = {
@@ -319,7 +310,6 @@ export const primerResources = {
                 { text: 'UN Open Source Week', url: 'https://www.unopensource.org/', desc: 'The annual convening at UN HQ — agenda, recordings, and community.' },
                 { text: 'The UN Open Source Principles', url: 'https://unite.un.org/en/news/sixteen-organizations-endorse-un-open-source-principles', desc: 'The eight principles and the launch announcement.' },
                 { text: 'Global Digital Compact', url: 'https://www.un.org/global-digital-compact', desc: 'The member-state framework naming DPGs and DPI as shared priorities.' },
-                { text: 'NYC Government Guide to UN Engagement', url: '/unnyc/guide', internal: true, desc: 'A practical guide for NYC government staff on OSW, OSPOs, GAM-4-DC, WUF13, and first steps.' },
             ],
         },
         {

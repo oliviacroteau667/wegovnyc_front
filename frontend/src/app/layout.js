@@ -48,11 +48,10 @@ export default async function RootLayout({ children }) {
     url: '/unnyc',
     isExternal: false,
     children: [
-      { id: 'unnyc-start', label: 'New to Open Source', url: '/unnyc/start', isExternal: false },
+      { id: 'unnyc-start', label: 'New to Government Open Source', url: '/unnyc/start', isExternal: false },
       { id: 'unnyc-crosswalk', label: 'Why It Matters', url: '/unnyc/crosswalk', isExternal: false },
       { id: 'unnyc-campaign', label: 'Sign the Letter', url: '/unnyc/campaign', isExternal: false },
       { id: 'unnyc-resources', label: 'Resources', url: '/unnyc/resources', isExternal: false },
-      { id: 'unnyc-guide', label: 'Guide', url: '/unnyc/guide', isExternal: false },
     ],
   };
 

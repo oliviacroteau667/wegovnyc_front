@@ -1,15 +1,15 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { endorsers } from '@/data/unnyc-primer';
 
 /**
  * PrimerMovementNow — combined "who's already in" section. Merges the former
  * "The World Is Moving" map (governments advancing open source) with the
  * "Endorsers & Contributors" list (organizations that endorsed the UN
- * Principles) into one momentum/social-proof block: governments on the map,
- * organizations on the list, Barcelona as first city, and the ask to add NYC.
+ * Principles) into one momentum/social-proof block. The map itself carries
+ * the Barcelona-first / NYC-should-follow message — Barcelona is the one
+ * "city" marker on the map, NYC is marked as "the ask."
  *
  * Leaflet needs browser globals, so the map is dynamically imported (ssr:false).
  */
@@ -29,6 +29,17 @@ export default function PrimerMovementNow() {
                 </header>
 
                 <PrimerMapInner />
+
+                <div className="unnyc-pr-mn__barcelona">
+                    <p>
+                        In November 2025, <strong>Barcelona</strong> became the first city in the
+                        world to formally endorse the UN Open Source Principles — the one city
+                        marker on this map. New York, marked above as &ldquo;the ask,&rdquo; hosts
+                        the movement every June but hasn&rsquo;t joined it yet. Following
+                        Barcelona&rsquo;s lead would make New York the first city in the Americas
+                        to do the same.
+                    </p>
+                </div>
 
                 <p className="unnyc-pr-map__source">
                     This map is illustrative. For the full global picture, explore the{' '}
@@ -52,21 +63,6 @@ export default function PrimerMovementNow() {
                             </li>
                         ))}
                     </ul>
-
-                    <div className="unnyc-pr-endorsers__city">
-                        <span className="unnyc-pr-endorsers__city-badge">First City</span>
-                        <div>
-                            <strong>{endorsers.city.name}</strong>
-                            <p>{endorsers.city.desc}</p>
-                        </div>
-                    </div>
-
-                    <div className="unnyc-pr-endorsers__cta">
-                        <p>{endorsers.cta.text}</p>
-                        <Link href={endorsers.cta.href} className="unnyc-btn unnyc-btn--primary">
-                            {endorsers.cta.label}
-                        </Link>
-                    </div>
                 </div>
             </div>
         </section>

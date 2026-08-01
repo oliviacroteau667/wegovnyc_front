@@ -1,5 +1,5 @@
 /* ============================================
-   /unnyc/start — "I am new to open source"
+   /unnyc/start — "I am new to government open source"
    Lives in @layer unnyc; inherits --unnyc-* tokens from .unnyc-page
    and reuses ../primer.css for the shared section components
    (PrimerConcepts, PrimerMovement, PrimerMovementNow).
@@ -31,8 +31,22 @@
     font-size: var(--unnyc-fs-4xl);
     line-height: 1.15;
     color: var(--unnyc-navy);
-    margin: 0 auto var(--unnyc-sp-5);
+    margin: 0 auto var(--unnyc-sp-3);
     max-width: 18ch;
+  }
+
+  .unnyc-start__basics-link {
+    font-size: var(--unnyc-fs-sm);
+    color: var(--unnyc-text-muted);
+    margin: 0 auto var(--unnyc-sp-6);
+  }
+
+  .unnyc-start__basics-link a {
+    color: var(--un-blue-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--unnyc-gold-dark);
+    text-underline-offset: 2px;
   }
 
   .unnyc-start__lede {

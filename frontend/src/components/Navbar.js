@@ -45,8 +45,8 @@ export default function Navbar({ data, siteName, children }) {
     }, [pathname]);
 
     // A link is active when the current path equals its URL or is nested
-    // beneath it (so /unnyc/guide keeps the UNNYC item active). Home ('/')
-    // only matches exactly, avoiding false positives.
+    // beneath it (so any /unnyc/* sub-route keeps the UNNYC item active).
+    // Home ('/') only matches exactly, avoiding false positives.
     const isActive = (url) => {
         if (!url || url === '/') return pathname === url;
         return pathname === url || pathname.startsWith(url + '/');

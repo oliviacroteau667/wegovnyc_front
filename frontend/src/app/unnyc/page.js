@@ -6,7 +6,7 @@ import UnnycPathCards from '@/components/unnyc/primer/UnnycPathCards';
 export const metadata = {
     title: 'UNNYC — Make NYC the First City in the Americas to Endorse Open Source',
     description:
-        'UNNYC is the campaign to make New York the first city in the Americas to endorse the UN Open Source Principles. Start wherever you are — new to open source, curious why it matters, ready to sign, or looking for resources.',
+        'UNNYC is the campaign to make New York the first city in the Americas to endorse the UN Open Source Principles. Start wherever you are — new to government open source, curious why it matters, ready to sign, or looking for resources.',
     openGraph: {
         title: 'UNNYC — The UN Has United Around Open Source. NYC Should Too.',
         description:

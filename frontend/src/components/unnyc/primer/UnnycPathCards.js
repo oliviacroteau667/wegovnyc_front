@@ -3,7 +3,7 @@ import Link from 'next/link';
 const PATHS = [
     {
         href: '/unnyc/start',
-        question: 'I am new to open source.',
+        question: 'I am new to government open source.',
         answer: 'Let’s walk you through it. You’ll get familiar with key terms and the history of the movement.',
     },
     {

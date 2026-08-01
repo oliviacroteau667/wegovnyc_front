@@ -17,17 +17,6 @@ export const metadata = {
     },
 };
 
-const NAV_ITEMS = [
-    { slug: 'open-by-default', title: 'Open by Default' },
-    { slug: 'contribute-back', title: 'Contribute Back' },
-    { slug: 'secure-by-design', title: 'Secure by Design' },
-    { slug: 'foster-inclusion', title: 'Foster Inclusion' },
-    { slug: 'design-for-reusability', title: 'Design for Reusability' },
-    { slug: 'provide-documentation', title: 'Provide Documentation' },
-    { slug: 'rise', title: 'RISE' },
-    { slug: 'sustain-and-scale', title: 'Sustain and Scale' },
-];
-
 /**
  * /unnyc/crosswalk — "why this matters to NYC." The persuasive core of the
  * campaign: who pays for vendor reliance today, what endorsement would
@@ -43,24 +32,6 @@ export default function CrosswalkPage() {
     return (
         <div className="unnyc-pr">
             <HeaderHeightVar />
-
-            {/* Mini nav */}
-            <nav className="unnyc-pr-nav" aria-label="Why it matters">
-                <div className="unnyc-pr-nav__inner">
-                    <Link href="/unnyc" className="unnyc-pr-nav__logo" title="Back to the UNNYC hub">
-                        <span className="unnyc-pr-nav__logo-mark">UN</span>
-                        <span className="unnyc-pr-nav__logo-ny">NYC</span>
-                        <span className="unnyc-pr-nav__logo-tag">Why It Matters</span>
-                    </Link>
-                    <ul className="unnyc-pr-nav__links">
-                        {NAV_ITEMS.map((it) => (
-                            <li key={it.slug}>
-                                <a href={`#${it.slug}`} className="unnyc-pr-nav__link">{it.title}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </nav>
 
             {/* Header */}
             <header className="unnyc-pr-cw__header">
@@ -584,7 +555,7 @@ export default function CrosswalkPage() {
                             I&rsquo;m ready to show my support →
                         </Link>
                         <Link href="/unnyc/start" className="unnyc-btn unnyc-btn--outline">
-                            ← New to open source?
+                            ← New to government open source?
                         </Link>
                     </div>
                 </div>

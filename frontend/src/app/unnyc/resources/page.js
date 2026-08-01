@@ -79,17 +79,6 @@ export default async function ResourcesPage() {
         <div className="unnyc-pr">
             <HeaderHeightVar />
 
-            {/* Mini nav */}
-            <nav className="unnyc-pr-nav" aria-label="Related resources">
-                <div className="unnyc-pr-nav__inner">
-                    <Link href="/unnyc" className="unnyc-pr-nav__logo" title="Back to the UNNYC hub">
-                        <span className="unnyc-pr-nav__logo-mark">UN</span>
-                        <span className="unnyc-pr-nav__logo-ny">NYC</span>
-                        <span className="unnyc-pr-nav__logo-tag">Resources</span>
-                    </Link>
-                </div>
-            </nav>
-
             <header className="unnyc-resources__header">
                 <div className="unnyc-container">
                     <p className="unnyc-resources__eyebrow">Looking for Something Specific?</p>
@@ -113,7 +102,7 @@ export default async function ResourcesPage() {
                     <p>Looking for something else?</p>
                     <div className="unnyc-resources__foot-links">
                         <Link href="/unnyc/start" className="unnyc-btn unnyc-btn--outline">
-                            New to open source?
+                            New to government open source?
                         </Link>
                         <Link href="/unnyc/crosswalk" className="unnyc-btn unnyc-btn--outline">
                             Why does this matter?
