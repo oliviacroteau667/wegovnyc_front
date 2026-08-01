@@ -165,24 +165,6 @@ export const cases = {
         'None of this is theoretical. Cities and nations have run open source government programs for years — and increasingly build them together, sharing one codebase across dozens of governments instead of each buying its own. Results NYC can learn from, and networks it can join.',
     items: [
         {
-            place: 'Barcelona',
-            flag: '🇪🇸',
-            headline: 'The endorsement playbook',
-            body:
-                'In November 2025 Barcelona became the first city in the world to formally endorse the UN Open Source Principles — sparked by attending UN Open Source Week. The signature came with three commitments: a citizen agreement on democratic technologies, an Open Source Programme Office, and a municipal fund for open source innovation.',
-            lesson: 'Endorsement is cheap, concrete, and pairs a signature with a light-touch roadmap. This is the model NYC can copy directly.',
-            link: 'https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/barcelona-first-city-globally-adopt-un-open-source-principles',
-        },
-        {
-            place: 'Paris',
-            flag: '🇫🇷',
-            headline: 'A city OSPO running 300+ services',
-            body:
-                'Paris runs Lutèce, an open source platform powering more than 300 city web services — permits, housing, the participatory budget. Its OSPO (begun 2019, fully established 2022, among the first city OSPOs anywhere) coordinates the city’s open source assets, and Lutèce has been redeployed as far away as Baltimore.',
-            lesson: 'A city OSPO isn’t bureaucracy — it’s how one city’s investment becomes 300 reusable services, and other cities’ free head start.',
-            link: 'https://www.projets-libres.org/en/podcast/offering-free-digital-services-to-citizens-from-lutece-to-cite-libre-paris-fr/',
-        },
-        {
             place: 'Munich',
             flag: '🇩🇪',
             headline: '"Public money, public code" as council policy',
@@ -217,15 +199,6 @@ export const cases = {
                 'India’s digital public infrastructure — open APIs and platforms for identity and payments — shows what shared rails do at scale: UPI processes billions of transactions a month across hundreds of competing apps. The open source ID platform MOSIP, born of the same thinking, is now adopted by countries across Asia and Africa.',
             lesson: 'When the rails are open and interoperable, the private sector competes on top of them instead of owning them.',
             link: 'https://www.mosip.io/',
-        },
-        {
-            place: 'Decidim',
-            flag: '🗳️',
-            headline: 'One participation platform, ~90 governments',
-            body:
-                'Barcelona built Decidim, an open source citizen-participation platform — itself forked from Madrid’s Consul. It now runs in close to 90 cities, regions, and institutions reaching over a million people, while Consul’s lineage spans 35 countries. Governments pool code, features, and translations instead of each commissioning its own tool.',
-            lesson: 'When one city opens its platform, the next gets it for free — and improves it for everyone. NYC could adopt and contribute rather than procure from scratch.',
-            link: 'https://decidim.org/',
         },
         {
             place: 'DHIS2',

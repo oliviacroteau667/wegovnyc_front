@@ -549,13 +549,13 @@ export default function CrosswalkPage() {
             {/* Foot nav */}
             <section className="unnyc-pr-cw__foot">
                 <div className="unnyc-container unnyc-container--narrow">
-                    <p>Convinced? The ask is a signature and a light-touch roadmap.</p>
+                    <p>Convinced? Here&rsquo;s what it&rsquo;s already won other cities.</p>
                     <div className="unnyc-pr-cw__foot-ctas">
-                        <Link href="/unnyc/campaign" className="unnyc-btn unnyc-btn--primary">
-                            I&rsquo;m ready to show my support →
-                        </Link>
                         <Link href="/unnyc/start" className="unnyc-btn unnyc-btn--outline">
                             ← New to government open source?
+                        </Link>
+                        <Link href="/unnyc/success" className="unnyc-btn unnyc-btn--primary">
+                            See what success looks like →
                         </Link>
                     </div>
                 </div>

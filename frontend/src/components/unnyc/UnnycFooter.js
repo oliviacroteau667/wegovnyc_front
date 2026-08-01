@@ -30,6 +30,7 @@ export default function UnnycFooter() {
                             <ul className="unnyc-footer__links">
                                 <li><Link href="/unnyc/start">New to Government Open Source</Link></li>
                                 <li><Link href="/unnyc/crosswalk">Why It Matters</Link></li>
+                                <li><Link href="/unnyc/success">What Success Looks Like</Link></li>
                                 <li><Link href="/unnyc/campaign">Sign the Letter</Link></li>
                                 <li><Link href="/unnyc/resources">Resources</Link></li>
                             </ul>

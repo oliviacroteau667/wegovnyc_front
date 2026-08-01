@@ -327,6 +327,7 @@
       radial-gradient(ellipse at 80% -20%, rgba(75, 146, 219, 0.12), transparent 55%),
       var(--unnyc-warm-white);
     border-bottom: 1px solid var(--unnyc-border);
+    text-align: center;
   }
 
   .unnyc-pr-cw__header-eyebrow {
@@ -352,7 +353,7 @@
     color: var(--unnyc-text-secondary);
     line-height: 1.7;
     max-width: 760px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .unnyc-pr-cw__section {
@@ -534,7 +535,7 @@
   .unnyc-pr-cw__part--gap {
     margin-top: var(--unnyc-sp-8);
     margin-bottom: 0;
-    padding: var(--unnyc-sp-6) var(--unnyc-sp-7);
+    padding: var(--unnyc-sp-8);
     background: rgba(212, 168, 67, 0.09);
     border: 1.5px solid var(--unnyc-gold);
     border-radius: var(--unnyc-radius-md);
@@ -931,9 +932,12 @@
       padding-left: 0;
     }
 
-    .unnyc-pr-why__quote,
-    .unnyc-pr-cw__part--gap {
+    .unnyc-pr-why__quote {
       padding: var(--unnyc-sp-4) var(--unnyc-sp-5);
+    }
+
+    .unnyc-pr-cw__part--gap {
+      padding: var(--unnyc-sp-6);
     }
   }
 }

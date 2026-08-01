@@ -2,7 +2,6 @@ import Link from 'next/link';
 import '../primer.css';
 import './resources.css';
 import HeaderHeightVar from '@/components/unnyc/primer/HeaderHeightVar';
-import PrimerCases from '@/components/unnyc/primer/PrimerCases';
 import PrimerResources from '@/components/unnyc/primer/PrimerResources';
 import PrimerContacts from '@/components/unnyc/primer/PrimerContacts';
 import PrimerNewsEvents from '@/components/unnyc/primer/PrimerNewsEvents';
@@ -12,19 +11,19 @@ import { events as staticEvents, news as staticNews } from '@/data/unnyc';
 export const metadata = {
     title: 'Related Resources — UNNYC',
     description:
-        'Case studies of governments running open source programs now, a resource directory, the people to call, and UNNYC news and events.',
+        'A resource directory, the people to call, and UNNYC news and events. Looking for case studies? See what success looks like.',
     openGraph: {
         title: 'Related Resources — UNNYC',
         description:
-            'Case studies, a resource directory, the people to call, and news and events for the UNNYC campaign.',
+            'The resource directory, the people to call, and news and events for the UNNYC campaign.',
         type: 'website',
     },
 };
 
 /**
  * /unnyc/resources — "I'm looking for related resources." Reference
- * material: case studies of governments already doing this, the resource
- * directory, the people to call, and news & events. CMS-driven events/news
+ * material: the resource directory, the people to call, and news & events.
+ * Case studies live on /unnyc/success instead. CMS-driven events/news
  * fetch lives here now (moved from the old hub page.js).
  */
 export const revalidate = 3600;
@@ -84,14 +83,14 @@ export default async function ResourcesPage() {
                     <p className="unnyc-resources__eyebrow">Looking for Something Specific?</p>
                     <h1 className="unnyc-resources__title">Related Resources</h1>
                     <p className="unnyc-resources__lede">
-                        Case studies of governments already doing this, the primary sources, the
-                        people to call, and what&rsquo;s happening now. If it&rsquo;s not here, one
-                        of these contacts can point you to who has it.
+                        The primary sources, the people to call, and what&rsquo;s happening now. If
+                        it&rsquo;s not here, one of these contacts can point you to who has it. Looking
+                        for case studies instead?{' '}
+                        <Link href="/unnyc/success">See what success looks like →</Link>
                     </p>
                 </div>
             </header>
 
-            <PrimerCases />
             <PrimerResources />
             <PrimerContacts />
             <PrimerNewsEvents news={news} events={events} />
@@ -106,6 +105,9 @@ export default async function ResourcesPage() {
                         </Link>
                         <Link href="/unnyc/crosswalk" className="unnyc-btn unnyc-btn--outline">
                             Why does this matter?
+                        </Link>
+                        <Link href="/unnyc/success" className="unnyc-btn unnyc-btn--outline">
+                            What success looks like
                         </Link>
                         <Link href="/unnyc/campaign" className="unnyc-btn unnyc-btn--primary">
                             Sign the open letter

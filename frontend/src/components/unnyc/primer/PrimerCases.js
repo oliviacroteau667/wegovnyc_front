@@ -1,16 +1,16 @@
 import { cases } from '@/data/unnyc-primer';
 
 /**
- * PrimerCases — case studies of governments running open source programs
- * now (Barcelona, Paris, Munich, Estonia, Germany, India). Each card ends
- * with the transferable "lesson for NYC."
+ * PrimerCases — further case studies of governments running open source
+ * programs now (Munich, Estonia, Germany, India, DHIS2, OpenCRVS). Barcelona
+ * and Paris get full narrative treatment on /unnyc/success instead of a
+ * card here. Each card ends with the transferable "lesson for NYC."
  */
 export default function PrimerCases() {
     return (
         <section id="cases" className="unnyc-section">
             <div className="unnyc-container">
                 <header className="unnyc-section__header">
-                    <span className="unnyc-section__eyebrow">{cases.eyebrow}</span>
                     <h2 className="unnyc-section__title">{cases.title}</h2>
                     <p className="unnyc-section__desc">{cases.lede}</p>
                 </header>

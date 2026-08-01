@@ -50,6 +50,7 @@ export default async function RootLayout({ children }) {
     children: [
       { id: 'unnyc-start', label: 'New to Government Open Source', url: '/unnyc/start', isExternal: false },
       { id: 'unnyc-crosswalk', label: 'Why It Matters', url: '/unnyc/crosswalk', isExternal: false },
+      { id: 'unnyc-success', label: 'What Success Looks Like', url: '/unnyc/success', isExternal: false },
       { id: 'unnyc-campaign', label: 'Sign the Letter', url: '/unnyc/campaign', isExternal: false },
       { id: 'unnyc-resources', label: 'Resources', url: '/unnyc/resources', isExternal: false },
     ],
