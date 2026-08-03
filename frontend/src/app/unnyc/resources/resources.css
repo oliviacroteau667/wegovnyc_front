@@ -16,15 +16,6 @@
     text-align: center;
   }
 
-  .unnyc-resources__eyebrow {
-    font-size: var(--unnyc-fs-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--unnyc-gold-dark);
-    margin-bottom: var(--unnyc-sp-4);
-  }
-
   .unnyc-resources__title {
     font-family: var(--unnyc-font-display);
     font-weight: 400;

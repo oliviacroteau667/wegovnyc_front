@@ -38,8 +38,7 @@ export default function CampaignChooserPage() {
         <div className="unnyc-cmp">
             <header className="unnyc-cmp-chooser__header">
                 <div className="unnyc-container">
-                    <p className="unnyc-cmp-chooser__eyebrow">Ready to Act?</p>
-                    <h1 className="unnyc-cmp-chooser__title">Sign the Letter</h1>
+                    <h1 className="unnyc-cmp-chooser__title">Ready to Act?</h1>
                     <p className="unnyc-cmp-chooser__lede">
                         There are two ways to back this campaign — pick the one that fits.
                     </p>

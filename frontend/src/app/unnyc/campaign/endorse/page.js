@@ -26,7 +26,6 @@ export default function CampaignEndorsePage() {
         <div className="unnyc-cmp">
             <header className="unnyc-cmp-header">
                 <div className="unnyc-cmp-container">
-                    <p className="unnyc-cmp-header__eyebrow">Formal Endorsement</p>
                     <h1 className="unnyc-cmp-header__title">
                         Formally Endorse the UN Open Source Principles
                     </h1>

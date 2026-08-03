@@ -164,7 +164,6 @@ export const policies = [
 ];
 
 export const openSource = {
-    eyebrow: 'The Campaign',
     title: 'NYC Hosts the UN\'s Open Source Movement. It Hasn\'t Joined It.',
     lede: 'Every June, UN Open Source Week brings more than 2,600 participants from 120+ countries to UN Headquarters — in New York City. In November 2025, Barcelona became the first city in the world to formally endorse the UN Open Source Principles, sparked by attending that same event. The city that hosts the movement should be part of it.',
     barcelona: {

@@ -36,12 +36,12 @@ export default function CrosswalkPage() {
             {/* Header */}
             <header className="unnyc-pr-cw__header">
                 <div className="unnyc-container">
-                    <p className="unnyc-pr-cw__header-eyebrow">Why This Matters to NYC</p>
                     <h1 className="unnyc-pr-cw__header-title">New York Runs on Software It Doesn&rsquo;t Control</h1>
                     <p className="unnyc-pr-cw__lede">
-                        This is the case for the campaign — who pays for vendor reliance today, what
-                        endorsing the UN Open Source Principles would actually cost and fund, and
-                        what closing the gap on each of the eight principles would mean for the city.
+                        Who pays for vendor reliance today, what endorsing the UN Open Source
+                        Principles would actually cost, and what{' '}
+                        <a href="#open-by-default" className="unnyc-gloss__link">closing the gap</a>{' '}
+                        on each of the eight principles would mean for the city.
                     </p>
                 </div>
             </header>
@@ -135,9 +135,8 @@ export default function CrosswalkPage() {
                         </cite>
                     </blockquote>
                     <p>
-                        That&rsquo;s not an abstract ideal — it&rsquo;s the same goal PIT Crew was
-                        built to pursue, in different words: capacity and control that currently flow
-                        to outside vendors, redirected toward the city and the residents it serves.
+                        Open source software solutions will redirect capacity and control that currently flow
+                        to outside vendors toward the city and the residents it serves.
                     </p>
                 </div>
             </section>
@@ -504,9 +503,8 @@ export default function CrosswalkPage() {
             {/* Closing — why NYC is central to the movement */}
             <section className="unnyc-pr-cw__closing">
                 <div className="unnyc-container unnyc-container--narrow">
-                    <p className="unnyc-pr-cw__closing-eyebrow">One Last Question</p>
                     <h2 className="unnyc-pr-cw__closing-title">
-                        <span aria-hidden="true">🌐</span> Why New York Is Central to This Movement
+                        Why New York Is Central to This Movement
                     </h2>
                     <p>
                         Every June, UN Open Source Week brings more than 2,600 participants from over
@@ -518,29 +516,19 @@ export default function CrosswalkPage() {
                         currently a host but not a participant.
                     </p>
                     <p>
-                        The circle is widening fast. Barcelona became the first city to endorse the
-                        Principles in November 2025; six months earlier,{' '}
-                        <a
-                            href="https://unite.un.org/en/news/france-becomes-first-government-endorse-un-open-source-principles"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            France became the first national government
-                        </a>{' '}
-                        to do the same. New York has a distinctive habit of being first to this kind
+                        New York has a distinctive habit of being first to this kind
                         of table on its own: it was the first U.S. city to submit a Voluntary Local
                         Review of its Sustainable Development Goal progress to the UN, in 2018, and
                         the first U.S. city to join the UN&rsquo;s Safe Cities initiative. Endorsing
                         the UN Open Source Principles is the same move, applied to technology.
                     </p>
                     <p>
-                        No city in the Americas has yet endorsed the Principles. New York, which hosts
-                        the movement every June, is the natural candidate to be first — gaining access
+                        No city in the Americas has yet endorsed the Principles. New York is the natural candidate to be first — gaining access
                         to a global community of practice, to solutions other governments have already
                         built and battle-tested, and to the contacts who can help it adopt them. New
                         York&rsquo;s own civic tech mission — building in-house, rejecting mediocrity,
                         putting affordability and trust first — already lines up with these principles.
-                        Endorsing them isn&rsquo;t a new commitment; it&rsquo;s a low-cost way to say so
+                        Endorsing them is a low-cost way to say so
                         on a global stage.
                     </p>
                 </div>

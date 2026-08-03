@@ -11,8 +11,6 @@ export default function PrimerHero() {
         <section className="unnyc-hero unnyc-pr-hero">
             <div className="unnyc-hero__bg" aria-hidden="true" />
             <div className="unnyc-hero__content">
-                <span className="unnyc-hero__eyebrow">{primerHero.eyebrow}</span>
-
                 <h1 className="unnyc-hero__title">
                     {primerHero.titleParts.map((part, i) => (
                         <span

@@ -177,16 +177,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.unnyc-page .unnyc-hero__eyebrow {
-  display: block;
-  font-size: var(--unnyc-fs-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--unnyc-gold);
-  margin-bottom: var(--unnyc-sp-4);
-}
-
 .unnyc-page .unnyc-hero__title {
   font-family: var(--unnyc-font-display);
   font-weight: 400;
@@ -340,16 +330,6 @@
   text-align: center;
   max-width: 720px;
   margin: 0 auto var(--unnyc-sp-16);
-}
-
-.unnyc-page .unnyc-section__eyebrow {
-  display: block;
-  font-size: var(--unnyc-fs-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--un-blue);
-  margin-bottom: var(--unnyc-sp-3);
 }
 
 .unnyc-page .unnyc-section__title {
@@ -1181,10 +1161,6 @@
   background:
     radial-gradient(ellipse at 20% -10%, rgba(75, 146, 219, 0.25), transparent 55%),
     linear-gradient(175deg, var(--unnyc-navy-deep) 0%, var(--unnyc-navy) 100%);
-}
-
-.unnyc-page .unnyc-campaign__eyebrow {
-  color: var(--unnyc-gold);
 }
 
 .unnyc-page .unnyc-campaign__title {

@@ -10,7 +10,6 @@ export default function PrimerMovement() {
         <section id="movement" className="unnyc-section">
             <div className="unnyc-container">
                 <header className="unnyc-section__header">
-                    <span className="unnyc-section__eyebrow">{movement.eyebrow}</span>
                     <h2 className="unnyc-section__title">{movement.title}</h2>
                     <p className="unnyc-section__desc">{movement.lede}</p>
                 </header>

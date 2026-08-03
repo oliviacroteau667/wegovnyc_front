@@ -34,21 +34,36 @@ export default function SuccessPage() {
 
             <header className="unnyc-success__header">
                 <div className="unnyc-container">
-                    <p className="unnyc-success__eyebrow">What Success Looks Like</p>
                     <h1 className="unnyc-success__title">
-                        NYC Isn&rsquo;t Being Asked to Take a Leap of Faith
+                        A Roadmap for NYC to Follow
                     </h1>
                     <p className="unnyc-success__lede">
-                        Barcelona, Paris, France, and Tokyo have already done versions of what
-                        this campaign is asking New York to do — and each has something concrete
-                        to show for it. Here&rsquo;s exactly what NYC would be modeling itself
-                        after.
+                        <a href="#barcelona" className="unnyc-gloss__link">Barcelona</a>,{' '}
+                        <a href="#paris" className="unnyc-gloss__link">Paris</a>, and{' '}
+                        <a href="#tokyo" className="unnyc-gloss__link">Tokyo</a> have already done
+                        versions of what this campaign is asking New York to do — and each has
+                        something concrete to show for it. Here&rsquo;s exactly what NYC would be
+                        modeling itself after.
                     </p>
                 </div>
             </header>
 
             {/* Barcelona — primary case */}
-            <section className="unnyc-success__case">
+            <section className="unnyc-success__case" id="barcelona">
+                <div className="unnyc-success__case-banner">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Barcelona_Skyline.jpg/1280px-Barcelona_Skyline.jpg"
+                        alt="Skyline of Barcelona"
+                    />
+                    <a
+                        href="https://commons.wikimedia.org/wiki/File:Barcelona_Skyline.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="unnyc-success__case-banner-credit"
+                    >
+                        Photo: SGDWN / Wikimedia Commons (CC BY-SA 4.0)
+                    </a>
+                </div>
                 <div className="unnyc-container unnyc-container--narrow">
                     <h2 className="unnyc-success__case-title">Barcelona: The First City to Sign</h2>
 
@@ -137,9 +152,23 @@ export default function SuccessPage() {
             </section>
 
             {/* Paris / France */}
-            <section className="unnyc-success__case unnyc-success__case--alt">
+            <section className="unnyc-success__case unnyc-success__case--alt" id="paris">
+                <div className="unnyc-success__case-banner">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/1280px-Paris_Night.jpg"
+                        alt="Paris cityscape at night"
+                    />
+                    <a
+                        href="https://commons.wikimedia.org/wiki/File:Paris_Night.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="unnyc-success__case-banner-credit"
+                    >
+                        Photo: Benh LIEU SONG / Wikimedia Commons (CC BY-SA 4.0)
+                    </a>
+                </div>
                 <div className="unnyc-container unnyc-container--narrow">
-                    <h2 className="unnyc-success__case-title">France &amp; Paris: From One Office to National Policy</h2>
+                    <h2 className="unnyc-success__case-title">Paris: From One Office to National Policy</h2>
 
                     <p>
                         Paris has run an open source software policy since 2002, centered on
@@ -234,7 +263,21 @@ export default function SuccessPage() {
             </section>
 
             {/* Tokyo */}
-            <section className="unnyc-success__case">
+            <section className="unnyc-success__case" id="tokyo">
+                <div className="unnyc-success__case-banner">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Minato_City%2C_Tokyo%2C_Japan_%28Night%29.jpg/1280px-Minato_City%2C_Tokyo%2C_Japan_%28Night%29.jpg"
+                        alt="Tokyo skyline at night"
+                    />
+                    <a
+                        href="https://commons.wikimedia.org/wiki/File:Minato_City,_Tokyo,_Japan_(Night).jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="unnyc-success__case-banner-credit"
+                    >
+                        Photo: David Kernan / Wikimedia Commons (CC BY 4.0)
+                    </a>
+                </div>
                 <div className="unnyc-container unnyc-container--narrow">
                     <h2 className="unnyc-success__case-title">Tokyo: When Transparency Becomes Infrastructure</h2>
 
@@ -290,48 +333,6 @@ export default function SuccessPage() {
                             official fork registry
                         </a>
                     </p>
-                </div>
-            </section>
-
-            {/* Closing synthesis — the three theses */}
-            <section className="unnyc-success__synthesis">
-                <div className="unnyc-container">
-                    <h2 className="unnyc-success__synthesis-title">What This Means for New York</h2>
-                    <div className="unnyc-success__thesis-grid">
-                        <div className="unnyc-success__thesis">
-                            <h3>Systems Worth Exporting</h3>
-                            <p>
-                                Decidim reaches Helsinki, Mexico City, and the European
-                                Commission — and NYC&rsquo;s own Civic Engagement Commission
-                                already runs on it. Lutèce runs 300+ Paris services. Tokyo&rsquo;s
-                                dashboard became Japan&rsquo;s standard. A PIT Crew build, done
-                                the same way, could be the next system another city doesn&rsquo;t
-                                have to build from scratch.
-                            </p>
-                        </div>
-                        <div className="unnyc-success__thesis">
-                            <h3>A Global Leadership Platform</h3>
-                            <p>
-                                Barcelona didn&rsquo;t just sign a document — it became &ldquo;the
-                                world&rsquo;s capital of open source,&rdquo; hosting its own
-                                international convening. France went from one city&rsquo;s OSPO
-                                to the first national endorsement anywhere. New York already
-                                hosts UN Open Source Week every June; endorsing would make it a
-                                participant in the movement it hosts, not just the venue.
-                            </p>
-                        </div>
-                        <div className="unnyc-success__thesis">
-                            <h3>Genuine Global Relevance</h3>
-                            <p>
-                                None of these governments did this for the attention — they did
-                                it to fix real problems: participatory budgeting, permit
-                                backlogs, a pandemic. The international recognition followed the
-                                work. The same is true for New York: the systems that make Click
-                                to Cancel exportable are the same ones that put the city back at
-                                the center of a conversation it already hosts.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </section>
 

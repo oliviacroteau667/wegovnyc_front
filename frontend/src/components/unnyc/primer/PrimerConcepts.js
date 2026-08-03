@@ -7,10 +7,9 @@ import { concepts } from '@/data/unnyc-primer';
  */
 export default function PrimerConcepts() {
     return (
-        <section id="concepts" className="unnyc-section unnyc-section--alt">
+        <section id="concepts" className="unnyc-section">
             <div className="unnyc-container">
                 <header className="unnyc-section__header">
-                    <span className="unnyc-section__eyebrow">{concepts.eyebrow}</span>
                     <h2 className="unnyc-section__title">{concepts.title}</h2>
                     <p className="unnyc-section__desc">{concepts.lede}</p>
                 </header>

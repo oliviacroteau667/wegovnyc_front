@@ -33,7 +33,6 @@ export default function StartPage() {
 
             <header className="unnyc-start__header">
                 <div className="unnyc-container">
-                    <p className="unnyc-start__eyebrow">First Things First</p>
                     <h1 className="unnyc-start__title">Let&rsquo;s Get You Oriented</h1>
                     <p className="unnyc-start__basics-link">
                         Are you entirely new to open source?{' '}
@@ -46,9 +45,14 @@ export default function StartPage() {
                         </a>
                     </p>
                     <p className="unnyc-start__lede">
-                        Before the campaign asks anything of you, here&rsquo;s how open source
-                        connects to government and the UN: the vocabulary specific to this movement,
-                        the eight principles the UN adopted, how the movement got here, and who has
+                        Here&rsquo;s how open source connects to government and the UN: the{' '}
+                        <a href="#concepts" className="unnyc-gloss__link">vocabulary</a> specific to
+                        this movement, the{' '}
+                        <a href="#principles" className="unnyc-gloss__link">eight principles</a> the
+                        UN adopted, the{' '}
+                        <a href="#movement" className="unnyc-gloss__link">timeline</a> of how the
+                        movement got here, and{' '}
+                        <a href="#going-open-source" className="unnyc-gloss__link">who</a> has
                         already signed on.
                     </p>
                 </div>

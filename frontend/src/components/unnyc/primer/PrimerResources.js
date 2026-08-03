@@ -11,7 +11,6 @@ export default function PrimerResources() {
         <section id="resources" className="unnyc-section">
             <div className="unnyc-container">
                 <header className="unnyc-section__header">
-                    <span className="unnyc-section__eyebrow">{primerResources.eyebrow}</span>
                     <h2 className="unnyc-section__title">{primerResources.title}</h2>
                     <p className="unnyc-section__desc">{primerResources.lede}</p>
                 </header>
@@ -20,7 +19,6 @@ export default function PrimerResources() {
                     {primerResources.groups.map((group, i) => (
                         <div key={i} className="unnyc-pr-resources__group">
                             <div className="unnyc-pr-resources__group-header">
-                                <span className="unnyc-pr-resources__icon" aria-hidden="true">{group.icon}</span>
                                 <h3 className="unnyc-pr-resources__group-title">{group.title}</h3>
                             </div>
                             <ul className="unnyc-pr-resources__links">

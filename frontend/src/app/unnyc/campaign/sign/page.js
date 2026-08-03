@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import '../campaign.css';
+import HeaderHeightVar from '@/components/unnyc/primer/HeaderHeightVar';
 import CampaignSignForm from '@/components/unnyc/CampaignSignForm';
 import { fetchAPI } from '@/lib/api';
 import { openSource } from '@/data/unnyc';
@@ -56,10 +57,11 @@ export default async function CampaignSignPage() {
 
     return (
         <div className="unnyc-cmp">
+            <HeaderHeightVar />
+
             {/* Letter header */}
             <header className="unnyc-cmp-header">
                 <div className="unnyc-cmp-container">
-                    <p className="unnyc-cmp-header__eyebrow">An Open Letter</p>
                     <h1 className="unnyc-cmp-header__title">
                         New York City Should Endorse the UN Open Source Principles
                     </h1>
@@ -94,9 +96,9 @@ export default async function CampaignSignPage() {
                 </div>
             </header>
 
-            {/* Letter body */}
-            <article className="unnyc-cmp-letter">
-                <div className="unnyc-cmp-container unnyc-cmp-container--narrow">
+            <div className="unnyc-cmp-layout">
+                {/* Letter body */}
+                <article className="unnyc-cmp-letter unnyc-cmp-layout__main">
                     <p className="unnyc-cmp-letter__salutation">
                         Dear Chief Technology Officer and Commissioner for International Affairs,
                     </p>
@@ -253,12 +255,10 @@ export default async function CampaignSignPage() {
                             </li>
                         </ul>
                     </aside>
-                </div>
-            </article>
+                </article>
 
-            {/* Sign / endorse */}
-            <section className="unnyc-cmp-sign">
-                <div className="unnyc-cmp-container unnyc-cmp-container--narrow">
+                {/* Sign / endorse */}
+                <aside className="unnyc-cmp-sign unnyc-cmp-sign--sidebar unnyc-cmp-layout__aside">
                     <h2 className="unnyc-cmp-sign__title">Add your name</h2>
                     <p className="unnyc-cmp-sign__lede">
                         Sign the letter as an individual, or endorse it on behalf of your
@@ -266,8 +266,8 @@ export default async function CampaignSignPage() {
                         community wants the city to lead.
                     </p>
                     <CampaignSignForm campaign={CAMPAIGN} />
-                </div>
-            </section>
+                </aside>
+            </div>
 
             {/* Endorser wall */}
             {(orgs.length > 0 || people.length > 0) && (

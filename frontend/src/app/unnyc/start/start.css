@@ -16,15 +16,6 @@
     text-align: center;
   }
 
-  .unnyc-start__eyebrow {
-    font-size: var(--unnyc-fs-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--unnyc-gold-dark);
-    margin-bottom: var(--unnyc-sp-4);
-  }
-
   .unnyc-start__title {
     font-family: var(--unnyc-font-display);
     font-weight: 400;
@@ -57,9 +48,42 @@
     margin: 0 auto;
   }
 
+  #principles .unnyc-section__header .unnyc-btn {
+    margin-top: var(--unnyc-sp-5);
+  }
+
+  .unnyc-start-principles__intro {
+    font-size: var(--unnyc-fs-lg);
+    color: var(--unnyc-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--unnyc-sp-6);
+  }
+
+  .unnyc-start-principles__intro--committed {
+    margin-top: var(--unnyc-sp-10);
+  }
+
+  .unnyc-start-principles__group {
+    margin-top: var(--unnyc-sp-8);
+  }
+
+  .unnyc-start-principles__group-title {
+    font-family: var(--unnyc-font-display);
+    font-weight: 400;
+    font-size: var(--unnyc-fs-lg);
+    color: var(--unnyc-navy);
+    margin: 0 0 var(--unnyc-sp-5);
+  }
+
+  .unnyc-start-principles__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--unnyc-sp-10);
+  }
+
   .unnyc-start-principles__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--unnyc-sp-5);
   }
 
@@ -69,6 +93,19 @@
     border-radius: var(--unnyc-radius-md);
     padding: var(--unnyc-sp-6);
     box-shadow: var(--unnyc-shadow-sm);
+  }
+
+  .unnyc-start-principle--primary {
+    border-left: 4px solid var(--unnyc-gold);
+    margin-bottom: var(--unnyc-sp-2);
+  }
+
+  .unnyc-start-principle--primary .unnyc-start-principle__title {
+    font-size: var(--unnyc-fs-xl);
+  }
+
+  .unnyc-start-principle--primary .unnyc-start-principle__desc + .unnyc-start-principle__desc {
+    margin-top: var(--unnyc-sp-3);
   }
 
   .unnyc-start-principle__icon {
@@ -105,12 +142,6 @@
     font-family: var(--unnyc-font-display);
     color: var(--unnyc-navy);
     margin: 0 0 var(--unnyc-sp-6);
-  }
-
-  @media (max-width: 900px) {
-    .unnyc-start-principles__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media (max-width: 640px) {

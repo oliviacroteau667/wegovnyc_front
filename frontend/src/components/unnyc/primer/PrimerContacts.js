@@ -13,7 +13,6 @@ export default function PrimerContacts() {
         <section id="contacts" className="unnyc-section unnyc-section--alt">
             <div className="unnyc-container">
                 <header className="unnyc-section__header">
-                    <span className="unnyc-section__eyebrow">{contacts.eyebrow}</span>
                     <h2 className="unnyc-section__title">{contacts.title}</h2>
                     <p className="unnyc-section__desc">{contacts.lede}</p>
                 </header>

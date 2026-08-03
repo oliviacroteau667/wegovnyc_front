@@ -11,7 +11,8 @@
      the sticky site-header — --pr-header-h (measured by HeaderHeightVar)
      captures its height and only a small gap is added. */
   .unnyc-pr .unnyc-reveal section[id],
-  .unnyc-pr .unnyc-campaign[id] {
+  .unnyc-pr .unnyc-campaign[id],
+  .unnyc-pr .unnyc-section[id] {
     scroll-margin-top: calc(var(--pr-header-h, 130px) + 28px);
   }
 
@@ -43,16 +44,6 @@
   /* --- Hub path cards: the four-question entry point --- */
   .unnyc-pr-paths {
     padding: var(--unnyc-sp-16) 0;
-  }
-
-  .unnyc-pr-paths__eyebrow {
-    text-align: center;
-    font-size: var(--unnyc-fs-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--unnyc-gold-dark);
-    margin: 0 0 var(--unnyc-sp-8);
   }
 
   .unnyc-pr-paths__grid {
@@ -144,16 +135,6 @@
   .unnyc-pr-map__source a {
     color: var(--un-blue-dark);
     font-weight: 600;
-  }
-
-  /* --- Merged News & Events: event cards get a gold edge + gold label
-     so upcoming events read distinctly inside the news grid. --- */
-  .unnyc-pr .unnyc-news__card--event {
-    border-left: 3px solid var(--unnyc-gold);
-  }
-
-  .unnyc-pr .unnyc-news__card--event .unnyc-news__source {
-    color: var(--unnyc-gold-dark);
   }
 
   /* --- Timeline --- */
@@ -328,15 +309,6 @@
       var(--unnyc-warm-white);
     border-bottom: 1px solid var(--unnyc-border);
     text-align: center;
-  }
-
-  .unnyc-pr-cw__header-eyebrow {
-    font-size: var(--unnyc-fs-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--unnyc-gold-dark);
-    margin-bottom: var(--unnyc-sp-4);
   }
 
   .unnyc-pr-cw__header-title {
@@ -557,15 +529,6 @@
     border-bottom: 1px solid var(--unnyc-border);
   }
 
-  .unnyc-pr-cw__closing-eyebrow {
-    font-size: var(--unnyc-fs-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--unnyc-gold-dark);
-    margin: 0 0 var(--unnyc-sp-3);
-  }
-
   .unnyc-pr-cw__closing-title {
     font-family: var(--unnyc-font-display);
     font-weight: 400;
@@ -609,37 +572,81 @@
     border-color: var(--unnyc-border);
   }
 
-  /* --- Case studies --- */
-  .unnyc-pr-cases__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* --- Case studies: infinite carousel ---
+     The item list is rendered twice (see PrimerCases.js) and the track
+     scrolls exactly one set-width (-50%) before looping, so the seam is
+     invisible. Pauses on hover/focus so the text can actually be read. */
+  .unnyc-pr-cases__viewport {
+    overflow: hidden;
+    width: 100%;
+    margin-top: var(--unnyc-sp-8);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+  }
+
+  .unnyc-pr-cases__track {
+    display: flex;
+    align-items: stretch;
     gap: var(--unnyc-sp-5);
+    width: max-content;
+    animation: unnyc-cases-scroll 50s linear infinite;
+  }
+
+  .unnyc-pr-cases__viewport:hover .unnyc-pr-cases__track,
+  .unnyc-pr-cases__viewport:focus-within .unnyc-pr-cases__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes unnyc-cases-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .unnyc-pr-cases__track {
+      animation: none;
+    }
   }
 
   .unnyc-pr-case {
+    flex: 0 0 340px;
+    width: 340px;
     display: flex;
     flex-direction: column;
     background: var(--unnyc-surface);
     border: 1px solid var(--unnyc-border);
     border-radius: var(--unnyc-radius-md);
-    padding: var(--unnyc-sp-6);
+    overflow: hidden;
     box-shadow: var(--unnyc-shadow-sm);
   }
 
-  .unnyc-pr-case__place {
+  .unnyc-pr-case__image-wrap {
+    width: 100%;
+    height: 160px;
+    background: var(--unnyc-surface-alt);
+  }
+
+  .unnyc-pr-case__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .unnyc-pr-case__content {
     display: flex;
-    align-items: center;
-    gap: var(--unnyc-sp-2);
+    flex-direction: column;
+    flex: 1;
+    padding: var(--unnyc-sp-6);
+  }
+
+  .unnyc-pr-case__place {
     font-size: var(--unnyc-fs-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--unnyc-gold-dark);
     margin-bottom: var(--unnyc-sp-3);
-  }
-
-  .unnyc-pr-case__flag {
-    font-size: var(--unnyc-fs-lg);
   }
 
   .unnyc-pr-case__headline {
@@ -758,14 +765,7 @@
   }
 
   .unnyc-pr-resources__group-header {
-    display: flex;
-    align-items: center;
-    gap: var(--unnyc-sp-3);
     margin-bottom: var(--unnyc-sp-4);
-  }
-
-  .unnyc-pr-resources__icon {
-    font-size: var(--unnyc-fs-2xl);
   }
 
   .unnyc-pr-resources__group-title {
@@ -885,10 +885,82 @@
     margin: 0;
   }
 
+  /* --- Find an OSPO --- */
+  .unnyc-pr-ospo__source {
+    font-size: var(--unnyc-fs-sm);
+    color: var(--unnyc-text-secondary);
+    text-align: center;
+    margin: 0 0 var(--unnyc-sp-10);
+  }
+
+  .unnyc-pr-ospo__source a {
+    color: var(--un-blue-dark);
+    font-weight: 600;
+  }
+
+  .unnyc-pr-ospo__country {
+    display: inline-block;
+    font-size: var(--unnyc-fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--unnyc-gold-dark);
+    margin-bottom: var(--unnyc-sp-2);
+  }
+
+  .unnyc-pr-ospo__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--unnyc-sp-5);
+  }
+
+  .unnyc-pr-ospo__card {
+    display: flex;
+    flex-direction: column;
+    background: var(--unnyc-surface);
+    border: 1px solid var(--unnyc-border);
+    border-radius: var(--unnyc-radius-md);
+    padding: var(--unnyc-sp-6);
+    box-shadow: var(--unnyc-shadow-sm);
+  }
+
+  .unnyc-pr-ospo__name {
+    font-family: var(--unnyc-font-body);
+    font-size: var(--unnyc-fs-base);
+    font-weight: 700;
+    color: var(--unnyc-navy);
+    margin: 0 0 var(--unnyc-sp-2);
+  }
+
+  .unnyc-pr-ospo__desc {
+    font-size: var(--unnyc-fs-sm);
+    color: var(--unnyc-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--unnyc-sp-4);
+  }
+
+  .unnyc-pr-ospo__links {
+    display: flex;
+    gap: var(--unnyc-sp-4);
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .unnyc-pr-ospo__links a {
+    font-size: var(--unnyc-fs-sm);
+    font-weight: 600;
+    color: var(--un-blue-dark);
+    text-decoration: none;
+  }
+
+  .unnyc-pr-ospo__links a:hover {
+    text-decoration: underline;
+  }
+
   /* --- Responsive --- */
   @media (max-width: 900px) {
-    .unnyc-pr-cases__grid,
-    .unnyc-pr-contacts__grid {
+    .unnyc-pr-contacts__grid,
+    .unnyc-pr-ospo__grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -898,10 +970,15 @@
   }
 
   @media (max-width: 640px) {
+    .unnyc-pr-case {
+      flex-basis: 260px;
+      width: 260px;
+    }
+
     .unnyc-pr-concepts__grid,
-    .unnyc-pr-cases__grid,
     .unnyc-pr-resources__grid,
     .unnyc-pr-contacts__grid,
+    .unnyc-pr-ospo__grid,
     .unnyc-pr-endorsers__grid,
     .unnyc-pr-paths__grid {
       grid-template-columns: 1fr;

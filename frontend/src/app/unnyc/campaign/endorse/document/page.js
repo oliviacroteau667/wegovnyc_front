@@ -1,4 +1,4 @@
-import './document.css';
+import '../../../printable-doc.css';
 import PrintButton from '@/components/unnyc/PrintButton';
 
 export const metadata = {

@@ -13,7 +13,7 @@ const PATHS = [
     },
     {
         href: '/unnyc/success',
-        question: 'Show me how Barcelona did it.',
+        question: 'Show me global cities leading the way.',
         answer: 'See how the first city to endorse the Principles did it, and what NYC could gain by following.',
     },
     {
@@ -32,7 +32,6 @@ export default function UnnycPathCards() {
     return (
         <section className="unnyc-pr-paths">
             <div className="unnyc-container">
-                <p className="unnyc-pr-paths__eyebrow">First Things First</p>
                 <div className="unnyc-pr-paths__grid">
                     {PATHS.map((path) => (
                         <Link key={path.href} href={path.href} className="unnyc-pr-path">
