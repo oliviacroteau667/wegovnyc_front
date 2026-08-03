@@ -20,7 +20,7 @@ export const primerHero = {
     subtitle:
         'Every June, UN Open Source Week brings 2,600+ participants from 120+ countries to UN Headquarters in Manhattan. In 2025, Barcelona became the first city to formally endorse the UN Open Source Principles. The city that hosts the movement hasn’t joined it — yet.',
     ctas: [
-        { text: 'Sign the Open Letter', href: '/unnyc/campaign', style: 'primary', internal: true },
+        { text: 'Show Your Support', href: '/unnyc/campaign', style: 'primary', internal: true },
     ],
     stats: [
         { number: '8', label: 'UN Open Source Principles' },

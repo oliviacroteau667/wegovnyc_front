@@ -12,9 +12,9 @@ const PATHS = [
         answer: 'We’ll show you exactly how open source principles can make NYC work better for you.',
     },
     {
-        href: '/unnyc/campaign',
-        question: 'I’m ready to show my support.',
-        answer: 'Here’s the open letter, ready for you to sign.',
+        href: '/unnyc/success',
+        question: 'Show me how Barcelona did it.',
+        answer: 'See how the first city to endorse the Principles did it, and what NYC could gain by following.',
     },
     {
         href: '/unnyc/resources',

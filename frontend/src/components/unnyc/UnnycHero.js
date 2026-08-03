@@ -85,7 +85,7 @@ export default function UnnycHero() {
 
         <div className="unnyc-hero__cta">
           <Link href="/unnyc/campaign" className="unnyc-btn unnyc-btn--primary">
-            Sign the Open Letter
+            Show Your Support
           </Link>
           <Link href="/unnyc/guide" className="unnyc-btn unnyc-btn--outline">
             Recommendations for NYC

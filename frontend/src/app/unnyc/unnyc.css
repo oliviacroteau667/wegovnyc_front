@@ -316,6 +316,16 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.unnyc-page .unnyc-btn--outline-dark {
+  border: 1.5px solid var(--unnyc-navy);
+  color: var(--unnyc-navy);
+}
+
+.unnyc-page .unnyc-btn--outline-dark:hover {
+  background: var(--unnyc-navy);
+  color: #FFFFFF;
+}
+
 /* --- Sections --- */
 .unnyc-page .unnyc-section {
   padding: var(--unnyc-sp-24) 0;
